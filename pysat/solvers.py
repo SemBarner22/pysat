@@ -2095,7 +2095,7 @@ class Glucose3(object):
         self.glucose = None
 
     def new(self, bootstrap_with=None, use_timer=False, incr=False,
-            with_proof=False):
+            with_proof=False, random_seed=239):
         """
             Actual constructor of the solver.
         """
@@ -2103,7 +2103,7 @@ class Glucose3(object):
         assert not incr or not with_proof, 'Incremental mode and proof tracing cannot be set together.'
 
         if not self.glucose:
-            self.glucose = pysolvers.glucose3_new()
+            self.glucose = pysolvers.glucose3_new(random_seed=random_seed)
 
             if bootstrap_with:
                 if type(bootstrap_with) == CNFPlus and bootstrap_with.atmosts:
@@ -2408,7 +2408,7 @@ class Glucose4(object):
         self.glucose = None
 
     def new(self, bootstrap_with=None, use_timer=False, incr=False,
-            with_proof=False):
+            with_proof=False, random_seed=239):
         """
             Actual constructor of the solver.
         """
@@ -2416,7 +2416,7 @@ class Glucose4(object):
         assert not incr or not with_proof, 'Incremental mode and proof tracing cannot be set together.'
 
         if not self.glucose:
-            self.glucose = pysolvers.glucose41_new()
+            self.glucose = pysolvers.glucose41_new(random_seed=random_seed)
 
             if bootstrap_with:
                 if type(bootstrap_with) == CNFPlus and bootstrap_with.atmosts:
@@ -2994,13 +2994,13 @@ class MapleChrono(object):
         self.delete()
         self.maplesat = None
 
-    def new(self, bootstrap_with=None, use_timer=False, with_proof=False):
+    def new(self, bootstrap_with=None, use_timer=False, with_proof=False, random_seed=239):
         """
             Actual constructor of the solver.
         """
 
         if not self.maplesat:
-            self.maplesat = pysolvers.maplechrono_new()
+            self.maplesat = pysolvers.maplechrono_new(random_seed=random_seed)
 
             if bootstrap_with:
                 if type(bootstrap_with) == CNFPlus and bootstrap_with.atmosts:
@@ -3304,13 +3304,13 @@ class MapleCM(object):
         self.delete()
         self.maplesat = None
 
-    def new(self, bootstrap_with=None, use_timer=False, with_proof=False):
+    def new(self, bootstrap_with=None, use_timer=False, with_proof=False, random_seed=239):
         """
             Actual constructor of the solver.
         """
 
         if not self.maplesat:
-            self.maplesat = pysolvers.maplecm_new()
+            self.maplesat = pysolvers.maplecm_new(random_seed=random_seed)
 
             if bootstrap_with:
                 if type(bootstrap_with) == CNFPlus and bootstrap_with.atmosts:

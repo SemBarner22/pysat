@@ -103,241 +103,241 @@ static jmp_buf env;
 //=============================================================================
 extern "C" {
 #ifdef WITH_CADICAL
-	static PyObject *py_cadical_new       (PyObject *, PyObject *);
-	static PyObject *py_cadical_add_cl    (PyObject *, PyObject *);
-	static PyObject *py_cadical_solve     (PyObject *, PyObject *);
-	static PyObject *py_cadical_tracepr   (PyObject *, PyObject *);
-	static PyObject *py_cadical_core      (PyObject *, PyObject *);
-	static PyObject *py_cadical_model     (PyObject *, PyObject *);
-	static PyObject *py_cadical_nof_vars  (PyObject *, PyObject *);
-	static PyObject *py_cadical_nof_cls   (PyObject *, PyObject *);
-	static PyObject *py_cadical_del       (PyObject *, PyObject *);
-	static PyObject *py_cadical_acc_stats (PyObject *, PyObject *);
+	static PyObject *py_cadical_new       (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_cadical_add_cl    (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_cadical_solve     (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_cadical_tracepr   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_cadical_core      (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_cadical_model     (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_cadical_nof_vars  (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_cadical_nof_cls   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_cadical_del       (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_cadical_acc_stats (PyObject *, PyObject *, PyObject *);
 #endif
 #ifdef WITH_GLUECARD30
-	static PyObject *py_gluecard3_new       (PyObject *, PyObject *);
-	static PyObject *py_gluecard3_add_cl    (PyObject *, PyObject *);
-	static PyObject *py_gluecard3_add_am    (PyObject *, PyObject *);
-	static PyObject *py_gluecard3_solve     (PyObject *, PyObject *);
-	static PyObject *py_gluecard3_solve_lim (PyObject *, PyObject *);
-	static PyObject *py_gluecard3_propagate (PyObject *, PyObject *);
-	static PyObject *py_gluecard3_setphases (PyObject *, PyObject *);
-	static PyObject *py_gluecard3_cbudget   (PyObject *, PyObject *);
-	static PyObject *py_gluecard3_pbudget   (PyObject *, PyObject *);
-	static PyObject *py_gluecard3_interrupt (PyObject *, PyObject *);
-	static PyObject *py_gluecard3_clearint  (PyObject *, PyObject *);
-	static PyObject *py_gluecard3_setincr   (PyObject *, PyObject *);
-	static PyObject *py_gluecard3_tracepr   (PyObject *, PyObject *);
-	static PyObject *py_gluecard3_core      (PyObject *, PyObject *);
-	static PyObject *py_gluecard3_model     (PyObject *, PyObject *);
-	static PyObject *py_gluecard3_nof_vars  (PyObject *, PyObject *);
-	static PyObject *py_gluecard3_nof_cls   (PyObject *, PyObject *);
-	static PyObject *py_gluecard3_del       (PyObject *, PyObject *);
-	static PyObject *py_gluecard3_acc_stats (PyObject *, PyObject *);
+	static PyObject *py_gluecard3_new       (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_gluecard3_add_cl    (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_gluecard3_add_am    (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_gluecard3_solve     (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_gluecard3_solve_lim (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_gluecard3_propagate (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_gluecard3_setphases (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_gluecard3_cbudget   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_gluecard3_pbudget   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_gluecard3_interrupt (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_gluecard3_clearint  (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_gluecard3_setincr   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_gluecard3_tracepr   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_gluecard3_core      (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_gluecard3_model     (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_gluecard3_nof_vars  (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_gluecard3_nof_cls   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_gluecard3_del       (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_gluecard3_acc_stats (PyObject *, PyObject *, PyObject *);
 #endif
 #ifdef WITH_GLUECARD41
-	static PyObject *py_gluecard41_new       (PyObject *, PyObject *);
-	static PyObject *py_gluecard41_add_cl    (PyObject *, PyObject *);
-	static PyObject *py_gluecard41_add_am    (PyObject *, PyObject *);
-	static PyObject *py_gluecard41_solve     (PyObject *, PyObject *);
-	static PyObject *py_gluecard41_solve_lim (PyObject *, PyObject *);
-	static PyObject *py_gluecard41_propagate (PyObject *, PyObject *);
-	static PyObject *py_gluecard41_setphases (PyObject *, PyObject *);
-	static PyObject *py_gluecard41_cbudget   (PyObject *, PyObject *);
-	static PyObject *py_gluecard41_pbudget   (PyObject *, PyObject *);
-	static PyObject *py_gluecard41_interrupt (PyObject *, PyObject *);
-	static PyObject *py_gluecard41_clearint  (PyObject *, PyObject *);
-	static PyObject *py_gluecard41_setincr   (PyObject *, PyObject *);
-	static PyObject *py_gluecard41_tracepr   (PyObject *, PyObject *);
-	static PyObject *py_gluecard41_core      (PyObject *, PyObject *);
-	static PyObject *py_gluecard41_model     (PyObject *, PyObject *);
-	static PyObject *py_gluecard41_nof_vars  (PyObject *, PyObject *);
-	static PyObject *py_gluecard41_nof_cls   (PyObject *, PyObject *);
-	static PyObject *py_gluecard41_del       (PyObject *, PyObject *);
-	static PyObject *py_gluecard41_acc_stats (PyObject *, PyObject *);
+	static PyObject *py_gluecard41_new       (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_gluecard41_add_cl    (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_gluecard41_add_am    (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_gluecard41_solve     (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_gluecard41_solve_lim (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_gluecard41_propagate (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_gluecard41_setphases (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_gluecard41_cbudget   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_gluecard41_pbudget   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_gluecard41_interrupt (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_gluecard41_clearint  (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_gluecard41_setincr   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_gluecard41_tracepr   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_gluecard41_core      (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_gluecard41_model     (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_gluecard41_nof_vars  (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_gluecard41_nof_cls   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_gluecard41_del       (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_gluecard41_acc_stats (PyObject *, PyObject *, PyObject *);
 #endif
 #ifdef WITH_GLUCOSE30
-	static PyObject *py_glucose3_new       (PyObject *, PyObject *);
-	static PyObject *py_glucose3_add_cl    (PyObject *, PyObject *);
-	static PyObject *py_glucose3_solve     (PyObject *, PyObject *);
-	static PyObject *py_glucose3_solve_lim (PyObject *, PyObject *);
-	static PyObject *py_glucose3_propagate (PyObject *, PyObject *);
-	static PyObject *py_glucose3_setphases (PyObject *, PyObject *);
-	static PyObject *py_glucose3_cbudget   (PyObject *, PyObject *);
-	static PyObject *py_glucose3_pbudget   (PyObject *, PyObject *);
-	static PyObject *py_glucose3_interrupt (PyObject *, PyObject *);
-	static PyObject *py_glucose3_clearint  (PyObject *, PyObject *);
-	static PyObject *py_glucose3_setincr   (PyObject *, PyObject *);
-	static PyObject *py_glucose3_tracepr   (PyObject *, PyObject *);
-	static PyObject *py_glucose3_core      (PyObject *, PyObject *);
-	static PyObject *py_glucose3_model     (PyObject *, PyObject *);
-	static PyObject *py_glucose3_nof_vars  (PyObject *, PyObject *);
-	static PyObject *py_glucose3_nof_cls   (PyObject *, PyObject *);
-	static PyObject *py_glucose3_del       (PyObject *, PyObject *);
-	static PyObject *py_glucose3_acc_stats (PyObject *, PyObject *);
+	static PyObject *py_glucose3_new       (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_glucose3_add_cl    (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_glucose3_solve     (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_glucose3_solve_lim (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_glucose3_propagate (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_glucose3_setphases (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_glucose3_cbudget   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_glucose3_pbudget   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_glucose3_interrupt (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_glucose3_clearint  (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_glucose3_setincr   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_glucose3_tracepr   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_glucose3_core      (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_glucose3_model     (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_glucose3_nof_vars  (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_glucose3_nof_cls   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_glucose3_del       (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_glucose3_acc_stats (PyObject *, PyObject *, PyObject *);
 #endif
 #ifdef WITH_GLUCOSE41
-	static PyObject *py_glucose41_new       (PyObject *, PyObject *);
-	static PyObject *py_glucose41_add_cl    (PyObject *, PyObject *);
-	static PyObject *py_glucose41_solve     (PyObject *, PyObject *);
-	static PyObject *py_glucose41_solve_lim (PyObject *, PyObject *);
-	static PyObject *py_glucose41_propagate (PyObject *, PyObject *);
-	static PyObject *py_glucose41_setphases (PyObject *, PyObject *);
-	static PyObject *py_glucose41_cbudget   (PyObject *, PyObject *);
-	static PyObject *py_glucose41_pbudget   (PyObject *, PyObject *);
-	static PyObject *py_glucose41_interrupt (PyObject *, PyObject *);
-	static PyObject *py_glucose41_clearint  (PyObject *, PyObject *);
-	static PyObject *py_glucose41_setincr   (PyObject *, PyObject *);
-	static PyObject *py_glucose41_tracepr   (PyObject *, PyObject *);
-	static PyObject *py_glucose41_core      (PyObject *, PyObject *);
-	static PyObject *py_glucose41_model     (PyObject *, PyObject *);
-	static PyObject *py_glucose41_nof_vars  (PyObject *, PyObject *);
-	static PyObject *py_glucose41_nof_cls   (PyObject *, PyObject *);
-	static PyObject *py_glucose41_del       (PyObject *, PyObject *);
-	static PyObject *py_glucose41_acc_stats (PyObject *, PyObject *);
+	static PyObject *py_glucose41_new       (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_glucose41_add_cl    (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_glucose41_solve     (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_glucose41_solve_lim (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_glucose41_propagate (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_glucose41_setphases (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_glucose41_cbudget   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_glucose41_pbudget   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_glucose41_interrupt (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_glucose41_clearint  (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_glucose41_setincr   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_glucose41_tracepr   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_glucose41_core      (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_glucose41_model     (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_glucose41_nof_vars  (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_glucose41_nof_cls   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_glucose41_del       (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_glucose41_acc_stats (PyObject *, PyObject *, PyObject *);
 #endif
 #ifdef WITH_LINGELING
-	static PyObject *py_lingeling_new       (PyObject *, PyObject *);
-	static PyObject *py_lingeling_add_cl    (PyObject *, PyObject *);
-	static PyObject *py_lingeling_solve     (PyObject *, PyObject *);
-	static PyObject *py_lingeling_setphases (PyObject *, PyObject *);
-	static PyObject *py_lingeling_tracepr   (PyObject *, PyObject *);
-	static PyObject *py_lingeling_core      (PyObject *, PyObject *);
-	static PyObject *py_lingeling_model     (PyObject *, PyObject *);
-	static PyObject *py_lingeling_nof_vars  (PyObject *, PyObject *);
-	static PyObject *py_lingeling_nof_cls   (PyObject *, PyObject *);
-	static PyObject *py_lingeling_del       (PyObject *, PyObject *);
-	static PyObject *py_lingeling_acc_stats (PyObject *, PyObject *);
+	static PyObject *py_lingeling_new       (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_lingeling_add_cl    (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_lingeling_solve     (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_lingeling_setphases (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_lingeling_tracepr   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_lingeling_core      (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_lingeling_model     (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_lingeling_nof_vars  (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_lingeling_nof_cls   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_lingeling_del       (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_lingeling_acc_stats (PyObject *, PyObject *, PyObject *);
 #endif
 #ifdef WITH_MAPLECHRONO
-	static PyObject *py_maplechrono_new       (PyObject *, PyObject *);
-	static PyObject *py_maplechrono_add_cl    (PyObject *, PyObject *);
-	static PyObject *py_maplechrono_solve     (PyObject *, PyObject *);
-	static PyObject *py_maplechrono_solve_lim (PyObject *, PyObject *);
-	static PyObject *py_maplechrono_propagate (PyObject *, PyObject *);
-	static PyObject *py_maplechrono_setphases (PyObject *, PyObject *);
-	static PyObject *py_maplechrono_cbudget   (PyObject *, PyObject *);
-	static PyObject *py_maplechrono_pbudget   (PyObject *, PyObject *);
-	static PyObject *py_maplechrono_interrupt (PyObject *, PyObject *);
-	static PyObject *py_maplechrono_clearint  (PyObject *, PyObject *);
-	static PyObject *py_maplechrono_tracepr   (PyObject *, PyObject *);
-	static PyObject *py_maplechrono_core      (PyObject *, PyObject *);
-	static PyObject *py_maplechrono_model     (PyObject *, PyObject *);
-	static PyObject *py_maplechrono_nof_vars  (PyObject *, PyObject *);
-	static PyObject *py_maplechrono_nof_cls   (PyObject *, PyObject *);
-	static PyObject *py_maplechrono_del       (PyObject *, PyObject *);
-	static PyObject *py_maplechrono_acc_stats (PyObject *, PyObject *);
+	static PyObject *py_maplechrono_new       (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplechrono_add_cl    (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplechrono_solve     (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplechrono_solve_lim (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplechrono_propagate (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplechrono_setphases (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplechrono_cbudget   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplechrono_pbudget   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplechrono_interrupt (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplechrono_clearint  (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplechrono_tracepr   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplechrono_core      (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplechrono_model     (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplechrono_nof_vars  (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplechrono_nof_cls   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplechrono_del       (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplechrono_acc_stats (PyObject *, PyObject *, PyObject *);
 #endif
 #ifdef WITH_MAPLECM
-	static PyObject *py_maplecm_new       (PyObject *, PyObject *);
-	static PyObject *py_maplecm_add_cl    (PyObject *, PyObject *);
-	static PyObject *py_maplecm_solve     (PyObject *, PyObject *);
-	static PyObject *py_maplecm_solve_lim (PyObject *, PyObject *);
-	static PyObject *py_maplecm_propagate (PyObject *, PyObject *);
-	static PyObject *py_maplecm_setphases (PyObject *, PyObject *);
-	static PyObject *py_maplecm_cbudget   (PyObject *, PyObject *);
-	static PyObject *py_maplecm_pbudget   (PyObject *, PyObject *);
-	static PyObject *py_maplecm_interrupt (PyObject *, PyObject *);
-	static PyObject *py_maplecm_clearint  (PyObject *, PyObject *);
-	static PyObject *py_maplecm_tracepr   (PyObject *, PyObject *);
-	static PyObject *py_maplecm_core      (PyObject *, PyObject *);
-	static PyObject *py_maplecm_model     (PyObject *, PyObject *);
-	static PyObject *py_maplecm_nof_vars  (PyObject *, PyObject *);
-	static PyObject *py_maplecm_nof_cls   (PyObject *, PyObject *);
-	static PyObject *py_maplecm_del       (PyObject *, PyObject *);
-	static PyObject *py_maplecm_acc_stats (PyObject *, PyObject *);
+	static PyObject *py_maplecm_new       (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplecm_add_cl    (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplecm_solve     (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplecm_solve_lim (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplecm_propagate (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplecm_setphases (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplecm_cbudget   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplecm_pbudget   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplecm_interrupt (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplecm_clearint  (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplecm_tracepr   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplecm_core      (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplecm_model     (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplecm_nof_vars  (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplecm_nof_cls   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplecm_del       (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplecm_acc_stats (PyObject *, PyObject *, PyObject *);
 #endif
 #ifdef WITH_MAPLESAT
-	static PyObject *py_maplesat_new       (PyObject *, PyObject *);
-	static PyObject *py_maplesat_add_cl    (PyObject *, PyObject *);
-	static PyObject *py_maplesat_solve     (PyObject *, PyObject *);
-	static PyObject *py_maplesat_solve_lim (PyObject *, PyObject *);
-	static PyObject *py_maplesat_propagate (PyObject *, PyObject *);
-	static PyObject *py_maplesat_setphases (PyObject *, PyObject *);
-	static PyObject *py_maplesat_cbudget   (PyObject *, PyObject *);
-	static PyObject *py_maplesat_pbudget   (PyObject *, PyObject *);
-	static PyObject *py_maplesat_interrupt (PyObject *, PyObject *);
-	static PyObject *py_maplesat_clearint  (PyObject *, PyObject *);
-	static PyObject *py_maplesat_tracepr   (PyObject *, PyObject *);
-	static PyObject *py_maplesat_core      (PyObject *, PyObject *);
-	static PyObject *py_maplesat_model     (PyObject *, PyObject *);
-	static PyObject *py_maplesat_nof_vars  (PyObject *, PyObject *);
-	static PyObject *py_maplesat_nof_cls   (PyObject *, PyObject *);
-	static PyObject *py_maplesat_del       (PyObject *, PyObject *);
-	static PyObject *py_maplesat_acc_stats (PyObject *, PyObject *);
+	static PyObject *py_maplesat_new       (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplesat_add_cl    (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplesat_solve     (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplesat_solve_lim (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplesat_propagate (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplesat_setphases (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplesat_cbudget   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplesat_pbudget   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplesat_interrupt (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplesat_clearint  (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplesat_tracepr   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplesat_core      (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplesat_model     (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplesat_nof_vars  (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplesat_nof_cls   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplesat_del       (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_maplesat_acc_stats (PyObject *, PyObject *, PyObject *);
 #endif
 #ifdef WITH_MERGESAT3
-	static PyObject *py_mergesat3_new       (PyObject *, PyObject *);
-	static PyObject *py_mergesat3_add_cl    (PyObject *, PyObject *);
-	static PyObject *py_mergesat3_solve     (PyObject *, PyObject *);
-	static PyObject *py_mergesat3_solve_lim (PyObject *, PyObject *);
-	static PyObject *py_mergesat3_propagate (PyObject *, PyObject *);
-	static PyObject *py_mergesat3_setphases (PyObject *, PyObject *);
-	static PyObject *py_mergesat3_cbudget   (PyObject *, PyObject *);
-	static PyObject *py_mergesat3_pbudget   (PyObject *, PyObject *);
-	static PyObject *py_mergesat3_interrupt (PyObject *, PyObject *);
-	static PyObject *py_mergesat3_clearint  (PyObject *, PyObject *);
-	static PyObject *py_mergesat3_core      (PyObject *, PyObject *);
-	static PyObject *py_mergesat3_model     (PyObject *, PyObject *);
-	static PyObject *py_mergesat3_nof_vars  (PyObject *, PyObject *);
-	static PyObject *py_mergesat3_nof_cls   (PyObject *, PyObject *);
-	static PyObject *py_mergesat3_del       (PyObject *, PyObject *);
-	static PyObject *py_mergesat3_acc_stats (PyObject *, PyObject *);
+	static PyObject *py_mergesat3_new       (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_mergesat3_add_cl    (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_mergesat3_solve     (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_mergesat3_solve_lim (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_mergesat3_propagate (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_mergesat3_setphases (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_mergesat3_cbudget   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_mergesat3_pbudget   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_mergesat3_interrupt (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_mergesat3_clearint  (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_mergesat3_core      (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_mergesat3_model     (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_mergesat3_nof_vars  (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_mergesat3_nof_cls   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_mergesat3_del       (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_mergesat3_acc_stats (PyObject *, PyObject *, PyObject *);
 #endif
 #ifdef WITH_MINICARD
-	static PyObject *py_minicard_new       (PyObject *, PyObject *);
-	static PyObject *py_minicard_add_cl    (PyObject *, PyObject *);
-	static PyObject *py_minicard_add_am    (PyObject *, PyObject *);
-	static PyObject *py_minicard_solve     (PyObject *, PyObject *);
-	static PyObject *py_minicard_solve_lim (PyObject *, PyObject *);
-	static PyObject *py_minicard_propagate (PyObject *, PyObject *);
-	static PyObject *py_minicard_setphases (PyObject *, PyObject *);
-	static PyObject *py_minicard_cbudget   (PyObject *, PyObject *);
-	static PyObject *py_minicard_pbudget   (PyObject *, PyObject *);
-	static PyObject *py_minicard_interrupt (PyObject *, PyObject *);
-	static PyObject *py_minicard_clearint  (PyObject *, PyObject *);
-	static PyObject *py_minicard_core      (PyObject *, PyObject *);
-	static PyObject *py_minicard_model     (PyObject *, PyObject *);
-	static PyObject *py_minicard_nof_vars  (PyObject *, PyObject *);
-	static PyObject *py_minicard_nof_cls   (PyObject *, PyObject *);
-	static PyObject *py_minicard_del       (PyObject *, PyObject *);
-	static PyObject *py_minicard_acc_stats (PyObject *, PyObject *);
+	static PyObject *py_minicard_new       (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minicard_add_cl    (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minicard_add_am    (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minicard_solve     (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minicard_solve_lim (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minicard_propagate (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minicard_setphases (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minicard_cbudget   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minicard_pbudget   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minicard_interrupt (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minicard_clearint  (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minicard_core      (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minicard_model     (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minicard_nof_vars  (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minicard_nof_cls   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minicard_del       (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minicard_acc_stats (PyObject *, PyObject *, PyObject *);
 #endif
 #ifdef WITH_MINISAT22
-	static PyObject *py_minisat22_new       (PyObject *, PyObject *);
-	static PyObject *py_minisat22_add_cl    (PyObject *, PyObject *);
-	static PyObject *py_minisat22_solve     (PyObject *, PyObject *);
-	static PyObject *py_minisat22_solve_lim (PyObject *, PyObject *);
-	static PyObject *py_minisat22_propagate (PyObject *, PyObject *);
-	static PyObject *py_minisat22_setphases (PyObject *, PyObject *);
-	static PyObject *py_minisat22_cbudget   (PyObject *, PyObject *);
-	static PyObject *py_minisat22_pbudget   (PyObject *, PyObject *);
-	static PyObject *py_minisat22_interrupt (PyObject *, PyObject *);
-	static PyObject *py_minisat22_clearint  (PyObject *, PyObject *);
-	static PyObject *py_minisat22_core      (PyObject *, PyObject *);
-	static PyObject *py_minisat22_model     (PyObject *, PyObject *);
-	static PyObject *py_minisat22_nof_vars  (PyObject *, PyObject *);
-	static PyObject *py_minisat22_nof_cls   (PyObject *, PyObject *);
-	static PyObject *py_minisat22_del       (PyObject *, PyObject *);
-	static PyObject *py_minisat22_acc_stats (PyObject *, PyObject *);
+	static PyObject *py_minisat22_new       (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minisat22_add_cl    (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minisat22_solve     (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minisat22_solve_lim (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minisat22_propagate (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minisat22_setphases (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minisat22_cbudget   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minisat22_pbudget   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minisat22_interrupt (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minisat22_clearint  (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minisat22_core      (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minisat22_model     (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minisat22_nof_vars  (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minisat22_nof_cls   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minisat22_del       (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minisat22_acc_stats (PyObject *, PyObject *, PyObject *);
 #endif
 #ifdef WITH_MINISATGH
-	static PyObject *py_minisatgh_new       (PyObject *, PyObject *);
-	static PyObject *py_minisatgh_add_cl    (PyObject *, PyObject *);
-	static PyObject *py_minisatgh_solve     (PyObject *, PyObject *);
-	static PyObject *py_minisatgh_solve_lim (PyObject *, PyObject *);
-	static PyObject *py_minisatgh_propagate (PyObject *, PyObject *);
-	static PyObject *py_minisatgh_setphases (PyObject *, PyObject *);
-	static PyObject *py_minisatgh_cbudget   (PyObject *, PyObject *);
-	static PyObject *py_minisatgh_pbudget   (PyObject *, PyObject *);
-	static PyObject *py_minisatgh_interrupt (PyObject *, PyObject *);
-	static PyObject *py_minisatgh_clearint  (PyObject *, PyObject *);
-	static PyObject *py_minisatgh_core      (PyObject *, PyObject *);
-	static PyObject *py_minisatgh_model     (PyObject *, PyObject *);
-	static PyObject *py_minisatgh_nof_vars  (PyObject *, PyObject *);
-	static PyObject *py_minisatgh_nof_cls   (PyObject *, PyObject *);
-	static PyObject *py_minisatgh_del       (PyObject *, PyObject *);
-	static PyObject *py_minisatgh_acc_stats (PyObject *, PyObject *);
+	static PyObject *py_minisatgh_new       (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minisatgh_add_cl    (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minisatgh_solve     (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minisatgh_solve_lim (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minisatgh_propagate (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minisatgh_setphases (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minisatgh_cbudget   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minisatgh_pbudget   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minisatgh_interrupt (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minisatgh_clearint  (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minisatgh_core      (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minisatgh_model     (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minisatgh_nof_vars  (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minisatgh_nof_cls   (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minisatgh_del       (PyObject *, PyObject *, PyObject *);
+	static PyObject *py_minisatgh_acc_stats (PyObject *, PyObject *, PyObject *);
 #endif
 }
 
@@ -345,243 +345,243 @@ extern "C" {
 //=============================================================================
 static PyMethodDef module_methods[] = {
 #ifdef WITH_CADICAL
-	{ "cadical_new",       py_cadical_new,       METH_VARARGS,      new_docstring },
-	{ "cadical_add_cl",    py_cadical_add_cl,    METH_VARARGS,    addcl_docstring },
-	{ "cadical_solve",     py_cadical_solve,     METH_VARARGS,    solve_docstring },
-	{ "cadical_tracepr",   py_cadical_tracepr,   METH_VARARGS,  tracepr_docstring },
-	{ "cadical_core",      py_cadical_core,      METH_VARARGS,     core_docstring },
-	{ "cadical_model",     py_cadical_model,     METH_VARARGS,    model_docstring },
-	{ "cadical_nof_vars",  py_cadical_nof_vars,  METH_VARARGS,    nvars_docstring },
-	{ "cadical_nof_cls",   py_cadical_nof_cls,   METH_VARARGS,     ncls_docstring },
-	{ "cadical_del",       py_cadical_del,       METH_VARARGS,      del_docstring },
-	{ "cadical_acc_stats", py_cadical_acc_stats, METH_VARARGS, acc_stat_docstring },
+	{ "cadical_new",       (PyCFunction) py_cadical_new,       METH_VARARGS | METH_KEYWORDS,      new_docstring },
+	{ "cadical_add_cl",    (PyCFunction) py_cadical_add_cl,    METH_VARARGS | METH_KEYWORDS,    addcl_docstring },
+	{ "cadical_solve",     (PyCFunction) py_cadical_solve,     METH_VARARGS | METH_KEYWORDS,    solve_docstring },
+	{ "cadical_tracepr",   (PyCFunction) py_cadical_tracepr,   METH_VARARGS | METH_KEYWORDS,  tracepr_docstring },
+	{ "cadical_core",      (PyCFunction) py_cadical_core,      METH_VARARGS | METH_KEYWORDS,     core_docstring },
+	{ "cadical_model",     (PyCFunction) py_cadical_model,     METH_VARARGS | METH_KEYWORDS,    model_docstring },
+	{ "cadical_nof_vars",  (PyCFunction) py_cadical_nof_vars,  METH_VARARGS | METH_KEYWORDS,    nvars_docstring },
+	{ "cadical_nof_cls",   (PyCFunction) py_cadical_nof_cls,   METH_VARARGS | METH_KEYWORDS,     ncls_docstring },
+	{ "cadical_del",       (PyCFunction) py_cadical_del,       METH_VARARGS | METH_KEYWORDS,      del_docstring },
+	{ "cadical_acc_stats", (PyCFunction) py_cadical_acc_stats, METH_VARARGS | METH_KEYWORDS, acc_stat_docstring },
 #endif
 #ifdef WITH_GLUECARD30
-	{ "gluecard3_new",       py_gluecard3_new,       METH_VARARGS,       new_docstring },
-	{ "gluecard3_add_cl",    py_gluecard3_add_cl,    METH_VARARGS,     addcl_docstring },
-	{ "gluecard3_add_am",    py_gluecard3_add_am,    METH_VARARGS,     addam_docstring },
-	{ "gluecard3_solve",     py_gluecard3_solve,     METH_VARARGS,     solve_docstring },
-	{ "gluecard3_solve_lim", py_gluecard3_solve_lim, METH_VARARGS,       lim_docstring },
-	{ "gluecard3_propagate", py_gluecard3_propagate, METH_VARARGS,      prop_docstring },
-	{ "gluecard3_setphases", py_gluecard3_setphases, METH_VARARGS,    phases_docstring },
-	{ "gluecard3_cbudget",   py_gluecard3_cbudget,   METH_VARARGS,   cbudget_docstring },
-	{ "gluecard3_pbudget",   py_gluecard3_pbudget,   METH_VARARGS,   pbudget_docstring },
-	{ "gluecard3_interrupt", py_gluecard3_interrupt, METH_VARARGS, interrupt_docstring },
-	{ "gluecard3_clearint",  py_gluecard3_clearint,  METH_VARARGS,  clearint_docstring },
-	{ "gluecard3_setincr",   py_gluecard3_setincr,   METH_VARARGS,   setincr_docstring },
-	{ "gluecard3_tracepr",   py_gluecard3_tracepr,   METH_VARARGS,   tracepr_docstring },
-	{ "gluecard3_core",      py_gluecard3_core,      METH_VARARGS,      core_docstring },
-	{ "gluecard3_model",     py_gluecard3_model,     METH_VARARGS,     model_docstring },
-	{ "gluecard3_nof_vars",  py_gluecard3_nof_vars,  METH_VARARGS,     nvars_docstring },
-	{ "gluecard3_nof_cls",   py_gluecard3_nof_cls,   METH_VARARGS,      ncls_docstring },
-	{ "gluecard3_del",       py_gluecard3_del,       METH_VARARGS,       del_docstring },
-	{ "gluecard3_acc_stats", py_gluecard3_acc_stats, METH_VARARGS,  acc_stat_docstring },
+	{ "gluecard3_new",       (PyCFunction) py_gluecard3_new,       METH_VARARGS | METH_KEYWORDS,       new_docstring },
+	{ "gluecard3_add_cl",    (PyCFunction) py_gluecard3_add_cl,    METH_VARARGS | METH_KEYWORDS,     addcl_docstring },
+	{ "gluecard3_add_am",    (PyCFunction) py_gluecard3_add_am,    METH_VARARGS | METH_KEYWORDS,     addam_docstring },
+	{ "gluecard3_solve",     (PyCFunction) py_gluecard3_solve,     METH_VARARGS | METH_KEYWORDS,     solve_docstring },
+	{ "gluecard3_solve_lim", (PyCFunction) py_gluecard3_solve_lim, METH_VARARGS | METH_KEYWORDS,       lim_docstring },
+	{ "gluecard3_propagate", (PyCFunction) py_gluecard3_propagate, METH_VARARGS | METH_KEYWORDS,      prop_docstring },
+	{ "gluecard3_setphases", (PyCFunction) py_gluecard3_setphases, METH_VARARGS | METH_KEYWORDS,    phases_docstring },
+	{ "gluecard3_cbudget",   (PyCFunction) py_gluecard3_cbudget,   METH_VARARGS | METH_KEYWORDS,   cbudget_docstring },
+	{ "gluecard3_pbudget",   (PyCFunction) py_gluecard3_pbudget,   METH_VARARGS | METH_KEYWORDS,   pbudget_docstring },
+	{ "gluecard3_interrupt", (PyCFunction) py_gluecard3_interrupt, METH_VARARGS | METH_KEYWORDS, interrupt_docstring },
+	{ "gluecard3_clearint",  (PyCFunction) py_gluecard3_clearint,  METH_VARARGS | METH_KEYWORDS,  clearint_docstring },
+	{ "gluecard3_setincr",   (PyCFunction) py_gluecard3_setincr,   METH_VARARGS | METH_KEYWORDS,   setincr_docstring },
+	{ "gluecard3_tracepr",   (PyCFunction) py_gluecard3_tracepr,   METH_VARARGS | METH_KEYWORDS,   tracepr_docstring },
+	{ "gluecard3_core",      (PyCFunction) py_gluecard3_core,      METH_VARARGS | METH_KEYWORDS,      core_docstring },
+	{ "gluecard3_model",     (PyCFunction) py_gluecard3_model,     METH_VARARGS | METH_KEYWORDS,     model_docstring },
+	{ "gluecard3_nof_vars",  (PyCFunction) py_gluecard3_nof_vars,  METH_VARARGS | METH_KEYWORDS,     nvars_docstring },
+	{ "gluecard3_nof_cls",   (PyCFunction) py_gluecard3_nof_cls,   METH_VARARGS | METH_KEYWORDS,      ncls_docstring },
+	{ "gluecard3_del",       (PyCFunction) py_gluecard3_del,       METH_VARARGS | METH_KEYWORDS,       del_docstring },
+	{ "gluecard3_acc_stats", (PyCFunction) py_gluecard3_acc_stats, METH_VARARGS | METH_KEYWORDS,  acc_stat_docstring },
 #endif
 #ifdef WITH_GLUECARD41
-	{ "gluecard41_new",       py_gluecard41_new,       METH_VARARGS,       new_docstring },
-	{ "gluecard41_add_cl",    py_gluecard41_add_cl,    METH_VARARGS,     addcl_docstring },
-	{ "gluecard41_add_am",    py_gluecard41_add_am,    METH_VARARGS,     addam_docstring },
-	{ "gluecard41_solve",     py_gluecard41_solve,     METH_VARARGS,     solve_docstring },
-	{ "gluecard41_solve_lim", py_gluecard41_solve_lim, METH_VARARGS,       lim_docstring },
-	{ "gluecard41_propagate", py_gluecard41_propagate, METH_VARARGS,      prop_docstring },
-	{ "gluecard41_setphases", py_gluecard41_setphases, METH_VARARGS,    phases_docstring },
-	{ "gluecard41_cbudget",   py_gluecard41_cbudget,   METH_VARARGS,   cbudget_docstring },
-	{ "gluecard41_pbudget",   py_gluecard41_pbudget,   METH_VARARGS,   pbudget_docstring },
-	{ "gluecard41_interrupt", py_gluecard41_interrupt, METH_VARARGS, interrupt_docstring },
-	{ "gluecard41_clearint",  py_gluecard41_clearint,  METH_VARARGS,  clearint_docstring },
-	{ "gluecard41_setincr",   py_gluecard41_setincr,   METH_VARARGS,   setincr_docstring },
-	{ "gluecard41_tracepr",   py_gluecard41_tracepr,   METH_VARARGS,   tracepr_docstring },
-	{ "gluecard41_core",      py_gluecard41_core,      METH_VARARGS,      core_docstring },
-	{ "gluecard41_model",     py_gluecard41_model,     METH_VARARGS,     model_docstring },
-	{ "gluecard41_nof_vars",  py_gluecard41_nof_vars,  METH_VARARGS,     nvars_docstring },
-	{ "gluecard41_nof_cls",   py_gluecard41_nof_cls,   METH_VARARGS,      ncls_docstring },
-	{ "gluecard41_del",       py_gluecard41_del,       METH_VARARGS,       del_docstring },
-	{ "gluecard41_acc_stats", py_gluecard41_acc_stats, METH_VARARGS,  acc_stat_docstring },
+	{ "gluecard41_new",       (PyCFunction) py_gluecard41_new,       METH_VARARGS | METH_KEYWORDS,       new_docstring },
+	{ "gluecard41_add_cl",    (PyCFunction) py_gluecard41_add_cl,    METH_VARARGS | METH_KEYWORDS,     addcl_docstring },
+	{ "gluecard41_add_am",    (PyCFunction) py_gluecard41_add_am,    METH_VARARGS | METH_KEYWORDS,     addam_docstring },
+	{ "gluecard41_solve",     (PyCFunction) py_gluecard41_solve,     METH_VARARGS | METH_KEYWORDS,     solve_docstring },
+	{ "gluecard41_solve_lim", (PyCFunction) py_gluecard41_solve_lim, METH_VARARGS | METH_KEYWORDS,       lim_docstring },
+	{ "gluecard41_propagate", (PyCFunction) py_gluecard41_propagate, METH_VARARGS | METH_KEYWORDS,      prop_docstring },
+	{ "gluecard41_setphases", (PyCFunction) py_gluecard41_setphases, METH_VARARGS | METH_KEYWORDS,    phases_docstring },
+	{ "gluecard41_cbudget",   (PyCFunction) py_gluecard41_cbudget,   METH_VARARGS | METH_KEYWORDS,   cbudget_docstring },
+	{ "gluecard41_pbudget",   (PyCFunction) py_gluecard41_pbudget,   METH_VARARGS | METH_KEYWORDS,   pbudget_docstring },
+	{ "gluecard41_interrupt", (PyCFunction) py_gluecard41_interrupt, METH_VARARGS | METH_KEYWORDS, interrupt_docstring },
+	{ "gluecard41_clearint",  (PyCFunction) py_gluecard41_clearint,  METH_VARARGS | METH_KEYWORDS,  clearint_docstring },
+	{ "gluecard41_setincr",   (PyCFunction) py_gluecard41_setincr,   METH_VARARGS | METH_KEYWORDS,   setincr_docstring },
+	{ "gluecard41_tracepr",   (PyCFunction) py_gluecard41_tracepr,   METH_VARARGS | METH_KEYWORDS,   tracepr_docstring },
+	{ "gluecard41_core",      (PyCFunction) py_gluecard41_core,      METH_VARARGS | METH_KEYWORDS,      core_docstring },
+	{ "gluecard41_model",     (PyCFunction) py_gluecard41_model,     METH_VARARGS | METH_KEYWORDS,     model_docstring },
+	{ "gluecard41_nof_vars",  (PyCFunction) py_gluecard41_nof_vars,  METH_VARARGS | METH_KEYWORDS,     nvars_docstring },
+	{ "gluecard41_nof_cls",   (PyCFunction) py_gluecard41_nof_cls,   METH_VARARGS | METH_KEYWORDS,      ncls_docstring },
+	{ "gluecard41_del",       (PyCFunction) py_gluecard41_del,       METH_VARARGS | METH_KEYWORDS,       del_docstring },
+	{ "gluecard41_acc_stats", (PyCFunction) py_gluecard41_acc_stats, METH_VARARGS | METH_KEYWORDS,  acc_stat_docstring },
 #endif
 #ifdef WITH_GLUCOSE30
-	{ "glucose3_new",       py_glucose3_new,       METH_VARARGS,       new_docstring },
-	{ "glucose3_add_cl",    py_glucose3_add_cl,    METH_VARARGS,     addcl_docstring },
-	{ "glucose3_solve",     py_glucose3_solve,     METH_VARARGS,     solve_docstring },
-	{ "glucose3_solve_lim", py_glucose3_solve_lim, METH_VARARGS,       lim_docstring },
-	{ "glucose3_propagate", py_glucose3_propagate, METH_VARARGS,      prop_docstring },
-	{ "glucose3_setphases", py_glucose3_setphases, METH_VARARGS,    phases_docstring },
-	{ "glucose3_cbudget",   py_glucose3_cbudget,   METH_VARARGS,   cbudget_docstring },
-	{ "glucose3_pbudget",   py_glucose3_pbudget,   METH_VARARGS,   pbudget_docstring },
-	{ "glucose3_interrupt", py_glucose3_interrupt, METH_VARARGS, interrupt_docstring },
-	{ "glucose3_clearint",  py_glucose3_clearint,  METH_VARARGS,  clearint_docstring },
-	{ "glucose3_setincr",   py_glucose3_setincr,   METH_VARARGS,   setincr_docstring },
-	{ "glucose3_tracepr",   py_glucose3_tracepr,   METH_VARARGS,   tracepr_docstring },
-	{ "glucose3_core",      py_glucose3_core,      METH_VARARGS,      core_docstring },
-	{ "glucose3_model",     py_glucose3_model,     METH_VARARGS,     model_docstring },
-	{ "glucose3_nof_vars",  py_glucose3_nof_vars,  METH_VARARGS,     nvars_docstring },
-	{ "glucose3_nof_cls",   py_glucose3_nof_cls,   METH_VARARGS,      ncls_docstring },
-	{ "glucose3_del",       py_glucose3_del,       METH_VARARGS,       del_docstring },
-	{ "glucose3_acc_stats", py_glucose3_acc_stats, METH_VARARGS,  acc_stat_docstring },
+	{ "glucose3_new",       (PyCFunction) py_glucose3_new,       METH_VARARGS | METH_KEYWORDS,  new_docstring },
+	{ "glucose3_add_cl",    (PyCFunction) py_glucose3_add_cl,    METH_VARARGS | METH_KEYWORDS,     addcl_docstring },
+	{ "glucose3_solve",     (PyCFunction) py_glucose3_solve,     METH_VARARGS | METH_KEYWORDS,     solve_docstring },
+	{ "glucose3_solve_lim", (PyCFunction) py_glucose3_solve_lim, METH_VARARGS | METH_KEYWORDS,       lim_docstring },
+	{ "glucose3_propagate", (PyCFunction) py_glucose3_propagate, METH_VARARGS | METH_KEYWORDS,      prop_docstring },
+	{ "glucose3_setphases", (PyCFunction) py_glucose3_setphases, METH_VARARGS | METH_KEYWORDS,    phases_docstring },
+	{ "glucose3_cbudget",   (PyCFunction) py_glucose3_cbudget,   METH_VARARGS | METH_KEYWORDS,   cbudget_docstring },
+	{ "glucose3_pbudget",   (PyCFunction) py_glucose3_pbudget,   METH_VARARGS | METH_KEYWORDS,   pbudget_docstring },
+	{ "glucose3_interrupt", (PyCFunction) py_glucose3_interrupt, METH_VARARGS | METH_KEYWORDS, interrupt_docstring },
+	{ "glucose3_clearint",  (PyCFunction) py_glucose3_clearint,  METH_VARARGS | METH_KEYWORDS,  clearint_docstring },
+	{ "glucose3_setincr",   (PyCFunction) py_glucose3_setincr,   METH_VARARGS | METH_KEYWORDS,   setincr_docstring },
+	{ "glucose3_tracepr",   (PyCFunction) py_glucose3_tracepr,   METH_VARARGS | METH_KEYWORDS,   tracepr_docstring },
+	{ "glucose3_core",      (PyCFunction) py_glucose3_core,      METH_VARARGS | METH_KEYWORDS,      core_docstring },
+	{ "glucose3_model",     (PyCFunction) py_glucose3_model,     METH_VARARGS | METH_KEYWORDS,     model_docstring },
+	{ "glucose3_nof_vars",  (PyCFunction) py_glucose3_nof_vars,  METH_VARARGS | METH_KEYWORDS,     nvars_docstring },
+	{ "glucose3_nof_cls",   (PyCFunction) py_glucose3_nof_cls,   METH_VARARGS | METH_KEYWORDS,      ncls_docstring },
+	{ "glucose3_del",       (PyCFunction) py_glucose3_del,       METH_VARARGS | METH_KEYWORDS,       del_docstring },
+	{ "glucose3_acc_stats", (PyCFunction) py_glucose3_acc_stats, METH_VARARGS | METH_KEYWORDS,  acc_stat_docstring },
 #endif
 #ifdef WITH_GLUCOSE41
-	{ "glucose41_new",       py_glucose41_new,       METH_VARARGS,       new_docstring },
-	{ "glucose41_add_cl",    py_glucose41_add_cl,    METH_VARARGS,     addcl_docstring },
-	{ "glucose41_solve",     py_glucose41_solve,     METH_VARARGS,     solve_docstring },
-	{ "glucose41_solve_lim", py_glucose41_solve_lim, METH_VARARGS,       lim_docstring },
-	{ "glucose41_propagate", py_glucose41_propagate, METH_VARARGS,      prop_docstring },
-	{ "glucose41_setphases", py_glucose41_setphases, METH_VARARGS,    phases_docstring },
-	{ "glucose41_cbudget",   py_glucose41_cbudget,   METH_VARARGS,   cbudget_docstring },
-	{ "glucose41_pbudget",   py_glucose41_pbudget,   METH_VARARGS,   pbudget_docstring },
-	{ "glucose41_interrupt", py_glucose41_interrupt, METH_VARARGS, interrupt_docstring },
-	{ "glucose41_clearint",  py_glucose41_clearint,  METH_VARARGS,  clearint_docstring },
-	{ "glucose41_setincr",   py_glucose41_setincr,   METH_VARARGS,   setincr_docstring },
-	{ "glucose41_tracepr",   py_glucose41_tracepr,   METH_VARARGS,   tracepr_docstring },
-	{ "glucose41_core",      py_glucose41_core,      METH_VARARGS,      core_docstring },
-	{ "glucose41_model",     py_glucose41_model,     METH_VARARGS,     model_docstring },
-	{ "glucose41_nof_vars",  py_glucose41_nof_vars,  METH_VARARGS,     nvars_docstring },
-	{ "glucose41_nof_cls",   py_glucose41_nof_cls,   METH_VARARGS,      ncls_docstring },
-	{ "glucose41_del",       py_glucose41_del,       METH_VARARGS,       del_docstring },
-	{ "glucose41_acc_stats", py_glucose41_acc_stats, METH_VARARGS,  acc_stat_docstring },
+	{ "glucose41_new",       (PyCFunction) py_glucose41_new,       METH_VARARGS | METH_KEYWORDS,  new_docstring },
+	{ "glucose41_add_cl",    (PyCFunction) py_glucose41_add_cl,    METH_VARARGS | METH_KEYWORDS,     addcl_docstring },
+	{ "glucose41_solve",     (PyCFunction) py_glucose41_solve,     METH_VARARGS | METH_KEYWORDS,     solve_docstring },
+	{ "glucose41_solve_lim", (PyCFunction) py_glucose41_solve_lim, METH_VARARGS | METH_KEYWORDS,       lim_docstring },
+	{ "glucose41_propagate", (PyCFunction) py_glucose41_propagate, METH_VARARGS | METH_KEYWORDS,      prop_docstring },
+	{ "glucose41_setphases", (PyCFunction) py_glucose41_setphases, METH_VARARGS | METH_KEYWORDS,    phases_docstring },
+	{ "glucose41_cbudget",   (PyCFunction) py_glucose41_cbudget,   METH_VARARGS | METH_KEYWORDS,   cbudget_docstring },
+	{ "glucose41_pbudget",   (PyCFunction) py_glucose41_pbudget,   METH_VARARGS | METH_KEYWORDS,   pbudget_docstring },
+	{ "glucose41_interrupt", (PyCFunction) py_glucose41_interrupt, METH_VARARGS | METH_KEYWORDS, interrupt_docstring },
+	{ "glucose41_clearint",  (PyCFunction) py_glucose41_clearint,  METH_VARARGS | METH_KEYWORDS,  clearint_docstring },
+	{ "glucose41_setincr",   (PyCFunction) py_glucose41_setincr,   METH_VARARGS | METH_KEYWORDS,   setincr_docstring },
+	{ "glucose41_tracepr",   (PyCFunction) py_glucose41_tracepr,   METH_VARARGS | METH_KEYWORDS,   tracepr_docstring },
+	{ "glucose41_core",      (PyCFunction) py_glucose41_core,      METH_VARARGS | METH_KEYWORDS,      core_docstring },
+	{ "glucose41_model",     (PyCFunction) py_glucose41_model,     METH_VARARGS | METH_KEYWORDS,     model_docstring },
+	{ "glucose41_nof_vars",  (PyCFunction) py_glucose41_nof_vars,  METH_VARARGS | METH_KEYWORDS,     nvars_docstring },
+	{ "glucose41_nof_cls",   (PyCFunction) py_glucose41_nof_cls,   METH_VARARGS | METH_KEYWORDS,      ncls_docstring },
+	{ "glucose41_del",       (PyCFunction) py_glucose41_del,       METH_VARARGS | METH_KEYWORDS,       del_docstring },
+	{ "glucose41_acc_stats", (PyCFunction) py_glucose41_acc_stats, METH_VARARGS | METH_KEYWORDS,  acc_stat_docstring },
 #endif
 #ifdef WITH_LINGELING
-	{ "lingeling_new",       py_lingeling_new,       METH_VARARGS,      new_docstring },
-	{ "lingeling_add_cl",    py_lingeling_add_cl,    METH_VARARGS,    addcl_docstring },
-	{ "lingeling_solve",     py_lingeling_solve,     METH_VARARGS,    solve_docstring },
-	{ "lingeling_setphases", py_lingeling_setphases, METH_VARARGS,   phases_docstring },
-	{ "lingeling_tracepr",   py_lingeling_tracepr,   METH_VARARGS,  tracepr_docstring },
-	{ "lingeling_core",      py_lingeling_core,      METH_VARARGS,     core_docstring },
-	{ "lingeling_model",     py_lingeling_model,     METH_VARARGS,    model_docstring },
-	{ "lingeling_nof_vars",  py_lingeling_nof_vars,  METH_VARARGS,    nvars_docstring },
-	{ "lingeling_nof_cls",   py_lingeling_nof_cls,   METH_VARARGS,     ncls_docstring },
-	{ "lingeling_del",       py_lingeling_del,       METH_VARARGS,      del_docstring },
-	{ "lingeling_acc_stats", py_lingeling_acc_stats, METH_VARARGS, acc_stat_docstring },
+	{ "lingeling_new",       (PyCFunction) py_lingeling_new,       METH_VARARGS | METH_KEYWORDS,      new_docstring },
+	{ "lingeling_add_cl",    (PyCFunction) py_lingeling_add_cl,    METH_VARARGS | METH_KEYWORDS,    addcl_docstring },
+	{ "lingeling_solve",     (PyCFunction) py_lingeling_solve,     METH_VARARGS | METH_KEYWORDS,    solve_docstring },
+	{ "lingeling_setphases", (PyCFunction) py_lingeling_setphases, METH_VARARGS | METH_KEYWORDS,   phases_docstring },
+	{ "lingeling_tracepr",   (PyCFunction) py_lingeling_tracepr,   METH_VARARGS | METH_KEYWORDS,  tracepr_docstring },
+	{ "lingeling_core",      (PyCFunction) py_lingeling_core,      METH_VARARGS | METH_KEYWORDS,     core_docstring },
+	{ "lingeling_model",     (PyCFunction) py_lingeling_model,     METH_VARARGS | METH_KEYWORDS,    model_docstring },
+	{ "lingeling_nof_vars",  (PyCFunction) py_lingeling_nof_vars,  METH_VARARGS | METH_KEYWORDS,    nvars_docstring },
+	{ "lingeling_nof_cls",   (PyCFunction) py_lingeling_nof_cls,   METH_VARARGS | METH_KEYWORDS,     ncls_docstring },
+	{ "lingeling_del",       (PyCFunction) py_lingeling_del,       METH_VARARGS | METH_KEYWORDS,      del_docstring },
+	{ "lingeling_acc_stats", (PyCFunction) py_lingeling_acc_stats, METH_VARARGS | METH_KEYWORDS, acc_stat_docstring },
 #endif
 #ifdef WITH_MAPLECHRONO
-	{ "maplechrono_new",       py_maplechrono_new,       METH_VARARGS,       new_docstring },
-	{ "maplechrono_add_cl",    py_maplechrono_add_cl,    METH_VARARGS,     addcl_docstring },
-	{ "maplechrono_solve",     py_maplechrono_solve,     METH_VARARGS,     solve_docstring },
-	{ "maplechrono_solve_lim", py_maplechrono_solve_lim, METH_VARARGS,       lim_docstring },
-	{ "maplechrono_propagate", py_maplechrono_propagate, METH_VARARGS,      prop_docstring },
-	{ "maplechrono_setphases", py_maplechrono_setphases, METH_VARARGS,    phases_docstring },
-	{ "maplechrono_cbudget",   py_maplechrono_cbudget,   METH_VARARGS,   cbudget_docstring },
-	{ "maplechrono_pbudget",   py_maplechrono_pbudget,   METH_VARARGS,   pbudget_docstring },
-	{ "maplechrono_interrupt", py_maplechrono_interrupt, METH_VARARGS, interrupt_docstring },
-	{ "maplechrono_clearint",  py_maplechrono_clearint,  METH_VARARGS,  clearint_docstring },
-	{ "maplechrono_tracepr",   py_maplechrono_tracepr,   METH_VARARGS,   tracepr_docstring },
-	{ "maplechrono_core",      py_maplechrono_core,      METH_VARARGS,      core_docstring },
-	{ "maplechrono_model",     py_maplechrono_model,     METH_VARARGS,     model_docstring },
-	{ "maplechrono_nof_vars",  py_maplechrono_nof_vars,  METH_VARARGS,     nvars_docstring },
-	{ "maplechrono_nof_cls",   py_maplechrono_nof_cls,   METH_VARARGS,      ncls_docstring },
-	{ "maplechrono_del",       py_maplechrono_del,       METH_VARARGS,       del_docstring },
-	{ "maplechrono_acc_stats", py_maplechrono_acc_stats, METH_VARARGS,  acc_stat_docstring },
+	{ "maplechrono_new",       (PyCFunction) py_maplechrono_new,       METH_VARARGS | METH_KEYWORDS,       new_docstring },
+	{ "maplechrono_add_cl",    (PyCFunction) py_maplechrono_add_cl,    METH_VARARGS | METH_KEYWORDS,     addcl_docstring },
+	{ "maplechrono_solve",     (PyCFunction) py_maplechrono_solve,     METH_VARARGS | METH_KEYWORDS,     solve_docstring },
+	{ "maplechrono_solve_lim", (PyCFunction) py_maplechrono_solve_lim, METH_VARARGS | METH_KEYWORDS,       lim_docstring },
+	{ "maplechrono_propagate", (PyCFunction) py_maplechrono_propagate, METH_VARARGS | METH_KEYWORDS,      prop_docstring },
+	{ "maplechrono_setphases", (PyCFunction) py_maplechrono_setphases, METH_VARARGS | METH_KEYWORDS,    phases_docstring },
+	{ "maplechrono_cbudget",   (PyCFunction) py_maplechrono_cbudget,   METH_VARARGS | METH_KEYWORDS,   cbudget_docstring },
+	{ "maplechrono_pbudget",   (PyCFunction) py_maplechrono_pbudget,   METH_VARARGS | METH_KEYWORDS,   pbudget_docstring },
+	{ "maplechrono_interrupt", (PyCFunction) py_maplechrono_interrupt, METH_VARARGS | METH_KEYWORDS, interrupt_docstring },
+	{ "maplechrono_clearint",  (PyCFunction) py_maplechrono_clearint,  METH_VARARGS | METH_KEYWORDS,  clearint_docstring },
+	{ "maplechrono_tracepr",   (PyCFunction) py_maplechrono_tracepr,   METH_VARARGS | METH_KEYWORDS,   tracepr_docstring },
+	{ "maplechrono_core",      (PyCFunction) py_maplechrono_core,      METH_VARARGS | METH_KEYWORDS,      core_docstring },
+	{ "maplechrono_model",     (PyCFunction) py_maplechrono_model,     METH_VARARGS | METH_KEYWORDS,     model_docstring },
+	{ "maplechrono_nof_vars",  (PyCFunction) py_maplechrono_nof_vars,  METH_VARARGS | METH_KEYWORDS,     nvars_docstring },
+	{ "maplechrono_nof_cls",   (PyCFunction) py_maplechrono_nof_cls,   METH_VARARGS | METH_KEYWORDS,      ncls_docstring },
+	{ "maplechrono_del",       (PyCFunction) py_maplechrono_del,       METH_VARARGS | METH_KEYWORDS,       del_docstring },
+	{ "maplechrono_acc_stats", (PyCFunction) py_maplechrono_acc_stats, METH_VARARGS | METH_KEYWORDS,  acc_stat_docstring },
 #endif
 #ifdef WITH_MAPLECM
-	{ "maplecm_new",       py_maplecm_new,       METH_VARARGS,       new_docstring },
-	{ "maplecm_add_cl",    py_maplecm_add_cl,    METH_VARARGS,     addcl_docstring },
-	{ "maplecm_solve",     py_maplecm_solve,     METH_VARARGS,     solve_docstring },
-	{ "maplecm_solve_lim", py_maplecm_solve_lim, METH_VARARGS,       lim_docstring },
-	{ "maplecm_propagate", py_maplecm_propagate, METH_VARARGS,      prop_docstring },
-	{ "maplecm_setphases", py_maplecm_setphases, METH_VARARGS,    phases_docstring },
-	{ "maplecm_cbudget",   py_maplecm_cbudget,   METH_VARARGS,   cbudget_docstring },
-	{ "maplecm_pbudget",   py_maplecm_pbudget,   METH_VARARGS,   pbudget_docstring },
-	{ "maplecm_interrupt", py_maplecm_interrupt, METH_VARARGS, interrupt_docstring },
-	{ "maplecm_clearint",  py_maplecm_clearint,  METH_VARARGS,  clearint_docstring },
-	{ "maplecm_tracepr",   py_maplecm_tracepr,   METH_VARARGS,   tracepr_docstring },
-	{ "maplecm_core",      py_maplecm_core,      METH_VARARGS,      core_docstring },
-	{ "maplecm_model",     py_maplecm_model,     METH_VARARGS,     model_docstring },
-	{ "maplecm_nof_vars",  py_maplecm_nof_vars,  METH_VARARGS,     nvars_docstring },
-	{ "maplecm_nof_cls",   py_maplecm_nof_cls,   METH_VARARGS,      ncls_docstring },
-	{ "maplecm_del",       py_maplecm_del,       METH_VARARGS,       del_docstring },
-	{ "maplecm_acc_stats", py_maplecm_acc_stats, METH_VARARGS,  acc_stat_docstring },
+	{ "maplecm_new",       (PyCFunction) py_maplecm_new,       METH_VARARGS | METH_KEYWORDS,       new_docstring },
+	{ "maplecm_add_cl",    (PyCFunction) py_maplecm_add_cl,    METH_VARARGS | METH_KEYWORDS,     addcl_docstring },
+	{ "maplecm_solve",     (PyCFunction) py_maplecm_solve,     METH_VARARGS | METH_KEYWORDS,     solve_docstring },
+	{ "maplecm_solve_lim", (PyCFunction) py_maplecm_solve_lim, METH_VARARGS | METH_KEYWORDS,       lim_docstring },
+	{ "maplecm_propagate", (PyCFunction) py_maplecm_propagate, METH_VARARGS | METH_KEYWORDS,      prop_docstring },
+	{ "maplecm_setphases", (PyCFunction) py_maplecm_setphases, METH_VARARGS | METH_KEYWORDS,    phases_docstring },
+	{ "maplecm_cbudget",   (PyCFunction) py_maplecm_cbudget,   METH_VARARGS | METH_KEYWORDS,   cbudget_docstring },
+	{ "maplecm_pbudget",   (PyCFunction) py_maplecm_pbudget,   METH_VARARGS | METH_KEYWORDS,   pbudget_docstring },
+	{ "maplecm_interrupt", (PyCFunction) py_maplecm_interrupt, METH_VARARGS | METH_KEYWORDS, interrupt_docstring },
+	{ "maplecm_clearint",  (PyCFunction) py_maplecm_clearint,  METH_VARARGS | METH_KEYWORDS,  clearint_docstring },
+	{ "maplecm_tracepr",   (PyCFunction) py_maplecm_tracepr,   METH_VARARGS | METH_KEYWORDS,   tracepr_docstring },
+	{ "maplecm_core",      (PyCFunction) py_maplecm_core,      METH_VARARGS | METH_KEYWORDS,      core_docstring },
+	{ "maplecm_model",     (PyCFunction) py_maplecm_model,     METH_VARARGS | METH_KEYWORDS,     model_docstring },
+	{ "maplecm_nof_vars",  (PyCFunction) py_maplecm_nof_vars,  METH_VARARGS | METH_KEYWORDS,     nvars_docstring },
+	{ "maplecm_nof_cls",   (PyCFunction) py_maplecm_nof_cls,   METH_VARARGS | METH_KEYWORDS,      ncls_docstring },
+	{ "maplecm_del",       (PyCFunction) py_maplecm_del,       METH_VARARGS | METH_KEYWORDS,       del_docstring },
+	{ "maplecm_acc_stats", (PyCFunction) py_maplecm_acc_stats, METH_VARARGS | METH_KEYWORDS,  acc_stat_docstring },
 #endif
 #ifdef WITH_MAPLESAT
-	{ "maplesat_new",       py_maplesat_new,       METH_VARARGS,       new_docstring },
-	{ "maplesat_add_cl",    py_maplesat_add_cl,    METH_VARARGS,     addcl_docstring },
-	{ "maplesat_solve",     py_maplesat_solve,     METH_VARARGS,     solve_docstring },
-	{ "maplesat_solve_lim", py_maplesat_solve_lim, METH_VARARGS,       lim_docstring },
-	{ "maplesat_propagate", py_maplesat_propagate, METH_VARARGS,      prop_docstring },
-	{ "maplesat_setphases", py_maplesat_setphases, METH_VARARGS,    phases_docstring },
-	{ "maplesat_cbudget",   py_maplesat_cbudget,   METH_VARARGS,   cbudget_docstring },
-	{ "maplesat_pbudget",   py_maplesat_pbudget,   METH_VARARGS,   pbudget_docstring },
-	{ "maplesat_interrupt", py_maplesat_interrupt, METH_VARARGS, interrupt_docstring },
-	{ "maplesat_clearint",  py_maplesat_clearint,  METH_VARARGS,  clearint_docstring },
-	{ "maplesat_tracepr",   py_maplesat_tracepr,   METH_VARARGS,   tracepr_docstring },
-	{ "maplesat_core",      py_maplesat_core,      METH_VARARGS,      core_docstring },
-	{ "maplesat_model",     py_maplesat_model,     METH_VARARGS,     model_docstring },
-	{ "maplesat_nof_vars",  py_maplesat_nof_vars,  METH_VARARGS,     nvars_docstring },
-	{ "maplesat_nof_cls",   py_maplesat_nof_cls,   METH_VARARGS,      ncls_docstring },
-	{ "maplesat_del",       py_maplesat_del,       METH_VARARGS,       del_docstring },
-	{ "maplesat_acc_stats", py_maplesat_acc_stats, METH_VARARGS,  acc_stat_docstring },
+	{ "maplesat_new",       (PyCFunction) py_maplesat_new,       METH_VARARGS | METH_KEYWORDS,       new_docstring },
+	{ "maplesat_add_cl",    (PyCFunction) py_maplesat_add_cl,    METH_VARARGS | METH_KEYWORDS,     addcl_docstring },
+	{ "maplesat_solve",     (PyCFunction) py_maplesat_solve,     METH_VARARGS | METH_KEYWORDS,     solve_docstring },
+	{ "maplesat_solve_lim", (PyCFunction) py_maplesat_solve_lim, METH_VARARGS | METH_KEYWORDS,       lim_docstring },
+	{ "maplesat_propagate", (PyCFunction) py_maplesat_propagate, METH_VARARGS | METH_KEYWORDS,      prop_docstring },
+	{ "maplesat_setphases", (PyCFunction) py_maplesat_setphases, METH_VARARGS | METH_KEYWORDS,    phases_docstring },
+	{ "maplesat_cbudget",   (PyCFunction) py_maplesat_cbudget,   METH_VARARGS | METH_KEYWORDS,   cbudget_docstring },
+	{ "maplesat_pbudget",   (PyCFunction) py_maplesat_pbudget,   METH_VARARGS | METH_KEYWORDS,   pbudget_docstring },
+	{ "maplesat_interrupt", (PyCFunction) py_maplesat_interrupt, METH_VARARGS | METH_KEYWORDS, interrupt_docstring },
+	{ "maplesat_clearint",  (PyCFunction) py_maplesat_clearint,  METH_VARARGS | METH_KEYWORDS,  clearint_docstring },
+	{ "maplesat_tracepr",   (PyCFunction) py_maplesat_tracepr,   METH_VARARGS | METH_KEYWORDS,   tracepr_docstring },
+	{ "maplesat_core",      (PyCFunction) py_maplesat_core,      METH_VARARGS | METH_KEYWORDS,      core_docstring },
+	{ "maplesat_model",     (PyCFunction) py_maplesat_model,     METH_VARARGS | METH_KEYWORDS,     model_docstring },
+	{ "maplesat_nof_vars",  (PyCFunction) py_maplesat_nof_vars,  METH_VARARGS | METH_KEYWORDS,     nvars_docstring },
+	{ "maplesat_nof_cls",   (PyCFunction) py_maplesat_nof_cls,   METH_VARARGS | METH_KEYWORDS,      ncls_docstring },
+	{ "maplesat_del",       (PyCFunction) py_maplesat_del,       METH_VARARGS | METH_KEYWORDS,       del_docstring },
+	{ "maplesat_acc_stats", (PyCFunction) py_maplesat_acc_stats, METH_VARARGS | METH_KEYWORDS,  acc_stat_docstring },
 #endif
 #ifdef WITH_MERGESAT3
-	{ "mergesat3_new",       py_mergesat3_new,       METH_VARARGS,       new_docstring },
-	{ "mergesat3_add_cl",    py_mergesat3_add_cl,    METH_VARARGS,     addcl_docstring },
-	{ "mergesat3_solve",     py_mergesat3_solve,     METH_VARARGS,     solve_docstring },
-	{ "mergesat3_solve_lim", py_mergesat3_solve_lim, METH_VARARGS,       lim_docstring },
-	{ "mergesat3_propagate", py_mergesat3_propagate, METH_VARARGS,      prop_docstring },
-	{ "mergesat3_setphases", py_mergesat3_setphases, METH_VARARGS,    phases_docstring },
-	{ "mergesat3_cbudget",   py_mergesat3_cbudget,   METH_VARARGS,   cbudget_docstring },
-	{ "mergesat3_pbudget",   py_mergesat3_pbudget,   METH_VARARGS,   pbudget_docstring },
-	{ "mergesat3_interrupt", py_mergesat3_interrupt, METH_VARARGS, interrupt_docstring },
-	{ "mergesat3_clearint",  py_mergesat3_clearint,  METH_VARARGS,  clearint_docstring },
-	{ "mergesat3_core",      py_mergesat3_core,      METH_VARARGS,      core_docstring },
-	{ "mergesat3_model",     py_mergesat3_model,     METH_VARARGS,     model_docstring },
-	{ "mergesat3_nof_vars",  py_mergesat3_nof_vars,  METH_VARARGS,     nvars_docstring },
-	{ "mergesat3_nof_cls",   py_mergesat3_nof_cls,   METH_VARARGS,      ncls_docstring },
-	{ "mergesat3_del",       py_mergesat3_del,       METH_VARARGS,       del_docstring },
-	{ "mergesat3_acc_stats", py_mergesat3_acc_stats, METH_VARARGS,  acc_stat_docstring },
+	{ "mergesat3_new",       (PyCFunction) py_mergesat3_new,       METH_VARARGS | METH_KEYWORDS,       new_docstring },
+	{ "mergesat3_add_cl",    (PyCFunction) py_mergesat3_add_cl,    METH_VARARGS | METH_KEYWORDS,     addcl_docstring },
+	{ "mergesat3_solve",     (PyCFunction) py_mergesat3_solve,     METH_VARARGS | METH_KEYWORDS,     solve_docstring },
+	{ "mergesat3_solve_lim", (PyCFunction) py_mergesat3_solve_lim, METH_VARARGS | METH_KEYWORDS,       lim_docstring },
+	{ "mergesat3_propagate", (PyCFunction) py_mergesat3_propagate, METH_VARARGS | METH_KEYWORDS,      prop_docstring },
+	{ "mergesat3_setphases", (PyCFunction) py_mergesat3_setphases, METH_VARARGS | METH_KEYWORDS,    phases_docstring },
+	{ "mergesat3_cbudget",   (PyCFunction) py_mergesat3_cbudget,   METH_VARARGS | METH_KEYWORDS,   cbudget_docstring },
+	{ "mergesat3_pbudget",   (PyCFunction) py_mergesat3_pbudget,   METH_VARARGS | METH_KEYWORDS,   pbudget_docstring },
+	{ "mergesat3_interrupt", (PyCFunction) py_mergesat3_interrupt, METH_VARARGS | METH_KEYWORDS, interrupt_docstring },
+	{ "mergesat3_clearint",  (PyCFunction) py_mergesat3_clearint,  METH_VARARGS | METH_KEYWORDS,  clearint_docstring },
+	{ "mergesat3_core",      (PyCFunction) py_mergesat3_core,      METH_VARARGS | METH_KEYWORDS,      core_docstring },
+	{ "mergesat3_model",     (PyCFunction) py_mergesat3_model,     METH_VARARGS | METH_KEYWORDS,     model_docstring },
+	{ "mergesat3_nof_vars",  (PyCFunction) py_mergesat3_nof_vars,  METH_VARARGS | METH_KEYWORDS,     nvars_docstring },
+	{ "mergesat3_nof_cls",   (PyCFunction) py_mergesat3_nof_cls,   METH_VARARGS | METH_KEYWORDS,      ncls_docstring },
+	{ "mergesat3_del",       (PyCFunction) py_mergesat3_del,       METH_VARARGS | METH_KEYWORDS,       del_docstring },
+	{ "mergesat3_acc_stats", (PyCFunction) py_mergesat3_acc_stats, METH_VARARGS | METH_KEYWORDS,  acc_stat_docstring },
 #endif
 #ifdef WITH_MINICARD
-	{ "minicard_new",       py_minicard_new,       METH_VARARGS,       new_docstring },
-	{ "minicard_add_cl",    py_minicard_add_cl,    METH_VARARGS,     addcl_docstring },
-	{ "minicard_solve",     py_minicard_solve,     METH_VARARGS,     solve_docstring },
-	{ "minicard_solve_lim", py_minicard_solve_lim, METH_VARARGS,       lim_docstring },
-	{ "minicard_propagate", py_minicard_propagate, METH_VARARGS,      prop_docstring },
-	{ "minicard_setphases", py_minicard_setphases, METH_VARARGS,    phases_docstring },
-	{ "minicard_cbudget",   py_minicard_cbudget,   METH_VARARGS,   cbudget_docstring },
-	{ "minicard_pbudget",   py_minicard_pbudget,   METH_VARARGS,   pbudget_docstring },
-	{ "minicard_interrupt", py_minicard_interrupt, METH_VARARGS, interrupt_docstring },
-	{ "minicard_clearint",  py_minicard_clearint,  METH_VARARGS,  clearint_docstring },
-	{ "minicard_core",      py_minicard_core,      METH_VARARGS,      core_docstring },
-	{ "minicard_model",     py_minicard_model,     METH_VARARGS,     model_docstring },
-	{ "minicard_nof_vars",  py_minicard_nof_vars,  METH_VARARGS,     nvars_docstring },
-	{ "minicard_nof_cls",   py_minicard_nof_cls,   METH_VARARGS,      ncls_docstring },
-	{ "minicard_del",       py_minicard_del,       METH_VARARGS,       del_docstring },
-	{ "minicard_add_am",    py_minicard_add_am,    METH_VARARGS,     addam_docstring },
-	{ "minicard_acc_stats", py_minicard_acc_stats, METH_VARARGS,  acc_stat_docstring },
+	{ "minicard_new",       (PyCFunction) py_minicard_new,       METH_VARARGS | METH_KEYWORDS,       new_docstring },
+	{ "minicard_add_cl",    (PyCFunction) py_minicard_add_cl,    METH_VARARGS | METH_KEYWORDS,     addcl_docstring },
+	{ "minicard_solve",     (PyCFunction) py_minicard_solve,     METH_VARARGS | METH_KEYWORDS,     solve_docstring },
+	{ "minicard_solve_lim", (PyCFunction) py_minicard_solve_lim, METH_VARARGS | METH_KEYWORDS,       lim_docstring },
+	{ "minicard_propagate", (PyCFunction) py_minicard_propagate, METH_VARARGS | METH_KEYWORDS,      prop_docstring },
+	{ "minicard_setphases", (PyCFunction) py_minicard_setphases, METH_VARARGS | METH_KEYWORDS,    phases_docstring },
+	{ "minicard_cbudget",   (PyCFunction) py_minicard_cbudget,   METH_VARARGS | METH_KEYWORDS,   cbudget_docstring },
+	{ "minicard_pbudget",   (PyCFunction) py_minicard_pbudget,   METH_VARARGS | METH_KEYWORDS,   pbudget_docstring },
+	{ "minicard_interrupt", (PyCFunction) py_minicard_interrupt, METH_VARARGS | METH_KEYWORDS, interrupt_docstring },
+	{ "minicard_clearint",  (PyCFunction) py_minicard_clearint,  METH_VARARGS | METH_KEYWORDS,  clearint_docstring },
+	{ "minicard_core",      (PyCFunction) py_minicard_core,      METH_VARARGS | METH_KEYWORDS,      core_docstring },
+	{ "minicard_model",     (PyCFunction) py_minicard_model,     METH_VARARGS | METH_KEYWORDS,     model_docstring },
+	{ "minicard_nof_vars",  (PyCFunction) py_minicard_nof_vars,  METH_VARARGS | METH_KEYWORDS,     nvars_docstring },
+	{ "minicard_nof_cls",   (PyCFunction) py_minicard_nof_cls,   METH_VARARGS | METH_KEYWORDS,      ncls_docstring },
+	{ "minicard_del",       (PyCFunction) py_minicard_del,       METH_VARARGS | METH_KEYWORDS,       del_docstring },
+	{ "minicard_add_am",    (PyCFunction) py_minicard_add_am,    METH_VARARGS | METH_KEYWORDS,     addam_docstring },
+	{ "minicard_acc_stats", (PyCFunction) py_minicard_acc_stats, METH_VARARGS | METH_KEYWORDS,  acc_stat_docstring },
 #endif
 #ifdef WITH_MINISAT22
-	{ "minisat22_new",       py_minisat22_new,       METH_VARARGS,       new_docstring },
-	{ "minisat22_add_cl",    py_minisat22_add_cl,    METH_VARARGS,     addcl_docstring },
-	{ "minisat22_solve",     py_minisat22_solve,     METH_VARARGS,     solve_docstring },
-	{ "minisat22_solve_lim", py_minisat22_solve_lim, METH_VARARGS,       lim_docstring },
-	{ "minisat22_propagate", py_minisat22_propagate, METH_VARARGS,      prop_docstring },
-	{ "minisat22_setphases", py_minisat22_setphases, METH_VARARGS,    phases_docstring },
-	{ "minisat22_cbudget",   py_minisat22_cbudget,   METH_VARARGS,   cbudget_docstring },
-	{ "minisat22_pbudget",   py_minisat22_pbudget,   METH_VARARGS,   pbudget_docstring },
-	{ "minisat22_interrupt", py_minisat22_interrupt, METH_VARARGS, interrupt_docstring },
-	{ "minisat22_clearint",  py_minisat22_clearint,  METH_VARARGS,  clearint_docstring },
-	{ "minisat22_core",      py_minisat22_core,      METH_VARARGS,      core_docstring },
-	{ "minisat22_model",     py_minisat22_model,     METH_VARARGS,     model_docstring },
-	{ "minisat22_nof_vars",  py_minisat22_nof_vars,  METH_VARARGS,     nvars_docstring },
-	{ "minisat22_nof_cls",   py_minisat22_nof_cls,   METH_VARARGS,      ncls_docstring },
-	{ "minisat22_del",       py_minisat22_del,       METH_VARARGS,       del_docstring },
-	{ "minisat22_acc_stats", py_minisat22_acc_stats, METH_VARARGS,  acc_stat_docstring },
+	{ "minisat22_new",       (PyCFunction) py_minisat22_new,       METH_VARARGS | METH_KEYWORDS,       new_docstring },
+	{ "minisat22_add_cl",    (PyCFunction) py_minisat22_add_cl,    METH_VARARGS | METH_KEYWORDS,     addcl_docstring },
+	{ "minisat22_solve",     (PyCFunction) py_minisat22_solve,     METH_VARARGS | METH_KEYWORDS,     solve_docstring },
+	{ "minisat22_solve_lim", (PyCFunction) py_minisat22_solve_lim, METH_VARARGS | METH_KEYWORDS,       lim_docstring },
+	{ "minisat22_propagate", (PyCFunction) py_minisat22_propagate, METH_VARARGS | METH_KEYWORDS,      prop_docstring },
+	{ "minisat22_setphases", (PyCFunction) py_minisat22_setphases, METH_VARARGS | METH_KEYWORDS,    phases_docstring },
+	{ "minisat22_cbudget",   (PyCFunction) py_minisat22_cbudget,   METH_VARARGS | METH_KEYWORDS,   cbudget_docstring },
+	{ "minisat22_pbudget",   (PyCFunction) py_minisat22_pbudget,   METH_VARARGS | METH_KEYWORDS,   pbudget_docstring },
+	{ "minisat22_interrupt", (PyCFunction) py_minisat22_interrupt, METH_VARARGS | METH_KEYWORDS, interrupt_docstring },
+	{ "minisat22_clearint",  (PyCFunction) py_minisat22_clearint,  METH_VARARGS | METH_KEYWORDS,  clearint_docstring },
+	{ "minisat22_core",      (PyCFunction) py_minisat22_core,      METH_VARARGS | METH_KEYWORDS,      core_docstring },
+	{ "minisat22_model",     (PyCFunction) py_minisat22_model,     METH_VARARGS | METH_KEYWORDS,     model_docstring },
+	{ "minisat22_nof_vars",  (PyCFunction) py_minisat22_nof_vars,  METH_VARARGS | METH_KEYWORDS,     nvars_docstring },
+	{ "minisat22_nof_cls",   (PyCFunction) py_minisat22_nof_cls,   METH_VARARGS | METH_KEYWORDS,      ncls_docstring },
+	{ "minisat22_del",       (PyCFunction) py_minisat22_del,       METH_VARARGS | METH_KEYWORDS,       del_docstring },
+	{ "minisat22_acc_stats", (PyCFunction) py_minisat22_acc_stats, METH_VARARGS | METH_KEYWORDS,  acc_stat_docstring },
 #endif
 #ifdef WITH_MINISATGH
-	{ "minisatgh_new",       py_minisatgh_new,       METH_VARARGS,       new_docstring },
-	{ "minisatgh_add_cl",    py_minisatgh_add_cl,    METH_VARARGS,     addcl_docstring },
-	{ "minisatgh_solve",     py_minisatgh_solve,     METH_VARARGS,     solve_docstring },
-	{ "minisatgh_solve_lim", py_minisatgh_solve_lim, METH_VARARGS,       lim_docstring },
-	{ "minisatgh_propagate", py_minisatgh_propagate, METH_VARARGS,      prop_docstring },
-	{ "minisatgh_setphases", py_minisatgh_setphases, METH_VARARGS,    phases_docstring },
-	{ "minisatgh_cbudget",   py_minisatgh_cbudget,   METH_VARARGS,   cbudget_docstring },
-	{ "minisatgh_pbudget",   py_minisatgh_pbudget,   METH_VARARGS,   pbudget_docstring },
-	{ "minisatgh_interrupt", py_minisatgh_interrupt, METH_VARARGS, interrupt_docstring },
-	{ "minisatgh_clearint",  py_minisatgh_clearint,  METH_VARARGS,  clearint_docstring },
-	{ "minisatgh_core",      py_minisatgh_core,      METH_VARARGS,      core_docstring },
-	{ "minisatgh_model",     py_minisatgh_model,     METH_VARARGS,     model_docstring },
-	{ "minisatgh_nof_vars",  py_minisatgh_nof_vars,  METH_VARARGS,     nvars_docstring },
-	{ "minisatgh_nof_cls",   py_minisatgh_nof_cls,   METH_VARARGS,      ncls_docstring },
-	{ "minisatgh_del",       py_minisatgh_del,       METH_VARARGS,       del_docstring },
-	{ "minisatgh_acc_stats", py_minisatgh_acc_stats, METH_VARARGS,  acc_stat_docstring },
+	{ "minisatgh_new",       (PyCFunction) py_minisatgh_new,       METH_VARARGS | METH_KEYWORDS,       new_docstring },
+	{ "minisatgh_add_cl",    (PyCFunction) py_minisatgh_add_cl,    METH_VARARGS | METH_KEYWORDS,     addcl_docstring },
+	{ "minisatgh_solve",     (PyCFunction) py_minisatgh_solve,     METH_VARARGS | METH_KEYWORDS,     solve_docstring },
+	{ "minisatgh_solve_lim", (PyCFunction) py_minisatgh_solve_lim, METH_VARARGS | METH_KEYWORDS,       lim_docstring },
+	{ "minisatgh_propagate", (PyCFunction) py_minisatgh_propagate, METH_VARARGS | METH_KEYWORDS,      prop_docstring },
+	{ "minisatgh_setphases", (PyCFunction) py_minisatgh_setphases, METH_VARARGS | METH_KEYWORDS,    phases_docstring },
+	{ "minisatgh_cbudget",   (PyCFunction) py_minisatgh_cbudget,   METH_VARARGS | METH_KEYWORDS,   cbudget_docstring },
+	{ "minisatgh_pbudget",   (PyCFunction) py_minisatgh_pbudget,   METH_VARARGS | METH_KEYWORDS,   pbudget_docstring },
+	{ "minisatgh_interrupt", (PyCFunction) py_minisatgh_interrupt, METH_VARARGS | METH_KEYWORDS, interrupt_docstring },
+	{ "minisatgh_clearint",  (PyCFunction) py_minisatgh_clearint,  METH_VARARGS | METH_KEYWORDS,  clearint_docstring },
+	{ "minisatgh_core",      (PyCFunction) py_minisatgh_core,      METH_VARARGS | METH_KEYWORDS,      core_docstring },
+	{ "minisatgh_model",     (PyCFunction) py_minisatgh_model,     METH_VARARGS | METH_KEYWORDS,     model_docstring },
+	{ "minisatgh_nof_vars",  (PyCFunction) py_minisatgh_nof_vars,  METH_VARARGS | METH_KEYWORDS,     nvars_docstring },
+	{ "minisatgh_nof_cls",   (PyCFunction) py_minisatgh_nof_cls,   METH_VARARGS | METH_KEYWORDS,      ncls_docstring },
+	{ "minisatgh_del",       (PyCFunction) py_minisatgh_del,       METH_VARARGS | METH_KEYWORDS,       del_docstring },
+	{ "minisatgh_acc_stats", (PyCFunction) py_minisatgh_acc_stats, METH_VARARGS | METH_KEYWORDS,  acc_stat_docstring },
 #endif
-	{ NULL, NULL, 0, NULL }
+    { NULL, NULL, 0,   NULL }
 };
 
 extern "C" {
@@ -755,7 +755,7 @@ static bool pyiter_to_vector(PyObject *obj, vector<int>& vect, int& max_var)
 // API for CaDiCaL
 //=============================================================================
 #ifdef WITH_CADICAL
-static PyObject *py_cadical_new(PyObject *self, PyObject *args)
+static PyObject *py_cadical_new(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	CaDiCaL::Solver *s = new CaDiCaL::Solver;
 
@@ -770,7 +770,7 @@ static PyObject *py_cadical_new(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_cadical_add_cl(PyObject *self, PyObject *args)
+static PyObject *py_cadical_add_cl(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *c_obj;
@@ -819,7 +819,7 @@ static PyObject *py_cadical_add_cl(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_cadical_tracepr(PyObject *self, PyObject *args)
+static PyObject *py_cadical_tracepr(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *p_obj;
@@ -859,7 +859,7 @@ static PyObject *py_cadical_tracepr(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_cadical_solve(PyObject *self, PyObject *args)
+static PyObject *py_cadical_solve(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *a_obj;  // assumptions
@@ -923,7 +923,7 @@ static PyObject *py_cadical_solve(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_cadical_core(PyObject *self, PyObject *args)
+static PyObject *py_cadical_core(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *a_obj;  // assumptions
@@ -963,7 +963,7 @@ static PyObject *py_cadical_core(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_cadical_model(PyObject *self, PyObject *args)
+static PyObject *py_cadical_model(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -993,7 +993,7 @@ static PyObject *py_cadical_model(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_cadical_nof_vars(PyObject *self, PyObject *args)
+static PyObject *py_cadical_nof_vars(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -1011,7 +1011,7 @@ static PyObject *py_cadical_nof_vars(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_cadical_nof_cls(PyObject *self, PyObject *args)
+static PyObject *py_cadical_nof_cls(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -1029,7 +1029,7 @@ static PyObject *py_cadical_nof_cls(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_cadical_del(PyObject *self, PyObject *args)
+static PyObject *py_cadical_del(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *p_obj;
@@ -1056,7 +1056,7 @@ static PyObject *py_cadical_del(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_cadical_acc_stats(PyObject *self, PyObject *args)
+static PyObject *py_cadical_acc_stats(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -1082,7 +1082,7 @@ static PyObject *py_cadical_acc_stats(PyObject *self, PyObject *args)
 // API for Gluecard 3.0
 //=============================================================================
 #ifdef WITH_GLUECARD30
-static PyObject *py_gluecard3_new(PyObject *self, PyObject *args)
+static PyObject *py_gluecard3_new(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	Gluecard30::Solver *s = new Gluecard30::Solver();
 
@@ -1149,7 +1149,7 @@ static inline bool gluecard3_iterate(
 
 //
 //=============================================================================
-static PyObject *py_gluecard3_add_cl(PyObject *self, PyObject *args)
+static PyObject *py_gluecard3_add_cl(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *c_obj;
@@ -1176,7 +1176,7 @@ static PyObject *py_gluecard3_add_cl(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_gluecard3_add_am(PyObject *self, PyObject *args)
+static PyObject *py_gluecard3_add_am(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *c_obj;
@@ -1204,7 +1204,7 @@ static PyObject *py_gluecard3_add_am(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_gluecard3_solve(PyObject *self, PyObject *args)
+static PyObject *py_gluecard3_solve(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *a_obj;  // assumptions
@@ -1245,7 +1245,7 @@ static PyObject *py_gluecard3_solve(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_gluecard3_solve_lim(PyObject *self, PyObject *args)
+static PyObject *py_gluecard3_solve_lim(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *a_obj;  // assumptions
@@ -1298,7 +1298,7 @@ static PyObject *py_gluecard3_solve_lim(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_gluecard3_propagate(PyObject *self, PyObject *args)
+static PyObject *py_gluecard3_propagate(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *a_obj;  // assumptions
@@ -1351,7 +1351,7 @@ static PyObject *py_gluecard3_propagate(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_gluecard3_setphases(PyObject *self, PyObject *args)
+static PyObject *py_gluecard3_setphases(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *p_obj;  // polarities given as a list of integer literals
@@ -1378,7 +1378,7 @@ static PyObject *py_gluecard3_setphases(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_gluecard3_cbudget(PyObject *self, PyObject *args)
+static PyObject *py_gluecard3_cbudget(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	int64_t budget;
@@ -1399,7 +1399,7 @@ static PyObject *py_gluecard3_cbudget(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_gluecard3_pbudget(PyObject *self, PyObject *args)
+static PyObject *py_gluecard3_pbudget(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	int64_t budget;
@@ -1420,7 +1420,7 @@ static PyObject *py_gluecard3_pbudget(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_gluecard3_interrupt(PyObject *self, PyObject *args)
+static PyObject *py_gluecard3_interrupt(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -1437,7 +1437,7 @@ static PyObject *py_gluecard3_interrupt(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_gluecard3_clearint(PyObject *self, PyObject *args)
+static PyObject *py_gluecard3_clearint(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -1454,7 +1454,7 @@ static PyObject *py_gluecard3_clearint(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_gluecard3_setincr(PyObject *self, PyObject *args)
+static PyObject *py_gluecard3_setincr(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -1471,7 +1471,7 @@ static PyObject *py_gluecard3_setincr(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_gluecard3_tracepr(PyObject *self, PyObject *args)
+static PyObject *py_gluecard3_tracepr(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *p_obj;
@@ -1512,7 +1512,7 @@ static PyObject *py_gluecard3_tracepr(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_gluecard3_core(PyObject *self, PyObject *args)
+static PyObject *py_gluecard3_core(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -1543,7 +1543,7 @@ static PyObject *py_gluecard3_core(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_gluecard3_model(PyObject *self, PyObject *args)
+static PyObject *py_gluecard3_model(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -1577,7 +1577,7 @@ static PyObject *py_gluecard3_model(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_gluecard3_nof_vars(PyObject *self, PyObject *args)
+static PyObject *py_gluecard3_nof_vars(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -1595,7 +1595,7 @@ static PyObject *py_gluecard3_nof_vars(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_gluecard3_nof_cls(PyObject *self, PyObject *args)
+static PyObject *py_gluecard3_nof_cls(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -1613,7 +1613,7 @@ static PyObject *py_gluecard3_nof_cls(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_gluecard3_del(PyObject *self, PyObject *args)
+static PyObject *py_gluecard3_del(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -1639,7 +1639,7 @@ static PyObject *py_gluecard3_del(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_gluecard3_acc_stats(PyObject *self, PyObject *args)
+static PyObject *py_gluecard3_acc_stats(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -1665,7 +1665,7 @@ static PyObject *py_gluecard3_acc_stats(PyObject *self, PyObject *args)
 // API for Gluecard 3.0
 //=============================================================================
 #ifdef WITH_GLUECARD41
-static PyObject *py_gluecard41_new(PyObject *self, PyObject *args)
+static PyObject *py_gluecard41_new(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	Gluecard41::Solver *s = new Gluecard41::Solver();
 
@@ -1732,7 +1732,7 @@ static inline bool gluecard41_iterate(
 
 //
 //=============================================================================
-static PyObject *py_gluecard41_add_cl(PyObject *self, PyObject *args)
+static PyObject *py_gluecard41_add_cl(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *c_obj;
@@ -1759,7 +1759,7 @@ static PyObject *py_gluecard41_add_cl(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_gluecard41_add_am(PyObject *self, PyObject *args)
+static PyObject *py_gluecard41_add_am(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *c_obj;
@@ -1787,7 +1787,7 @@ static PyObject *py_gluecard41_add_am(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_gluecard41_solve(PyObject *self, PyObject *args)
+static PyObject *py_gluecard41_solve(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *a_obj;  // assumptions
@@ -1828,7 +1828,7 @@ static PyObject *py_gluecard41_solve(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_gluecard41_solve_lim(PyObject *self, PyObject *args)
+static PyObject *py_gluecard41_solve_lim(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *a_obj;  // assumptions
@@ -1881,7 +1881,7 @@ static PyObject *py_gluecard41_solve_lim(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_gluecard41_propagate(PyObject *self, PyObject *args)
+static PyObject *py_gluecard41_propagate(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *a_obj;  // assumptions
@@ -1934,7 +1934,7 @@ static PyObject *py_gluecard41_propagate(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_gluecard41_setphases(PyObject *self, PyObject *args)
+static PyObject *py_gluecard41_setphases(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *p_obj;  // polarities given as a list of integer literals
@@ -1961,7 +1961,7 @@ static PyObject *py_gluecard41_setphases(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_gluecard41_cbudget(PyObject *self, PyObject *args)
+static PyObject *py_gluecard41_cbudget(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	int64_t budget;
@@ -1982,7 +1982,7 @@ static PyObject *py_gluecard41_cbudget(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_gluecard41_pbudget(PyObject *self, PyObject *args)
+static PyObject *py_gluecard41_pbudget(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	int64_t budget;
@@ -2003,7 +2003,7 @@ static PyObject *py_gluecard41_pbudget(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_gluecard41_interrupt(PyObject *self, PyObject *args)
+static PyObject *py_gluecard41_interrupt(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -2020,7 +2020,7 @@ static PyObject *py_gluecard41_interrupt(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_gluecard41_clearint(PyObject *self, PyObject *args)
+static PyObject *py_gluecard41_clearint(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -2037,7 +2037,7 @@ static PyObject *py_gluecard41_clearint(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_gluecard41_setincr(PyObject *self, PyObject *args)
+static PyObject *py_gluecard41_setincr(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -2054,7 +2054,7 @@ static PyObject *py_gluecard41_setincr(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_gluecard41_tracepr(PyObject *self, PyObject *args)
+static PyObject *py_gluecard41_tracepr(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *p_obj;
@@ -2095,7 +2095,7 @@ static PyObject *py_gluecard41_tracepr(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_gluecard41_core(PyObject *self, PyObject *args)
+static PyObject *py_gluecard41_core(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -2126,7 +2126,7 @@ static PyObject *py_gluecard41_core(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_gluecard41_model(PyObject *self, PyObject *args)
+static PyObject *py_gluecard41_model(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -2160,7 +2160,7 @@ static PyObject *py_gluecard41_model(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_gluecard41_nof_vars(PyObject *self, PyObject *args)
+static PyObject *py_gluecard41_nof_vars(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -2178,7 +2178,7 @@ static PyObject *py_gluecard41_nof_vars(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_gluecard41_nof_cls(PyObject *self, PyObject *args)
+static PyObject *py_gluecard41_nof_cls(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -2196,7 +2196,7 @@ static PyObject *py_gluecard41_nof_cls(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_gluecard41_del(PyObject *self, PyObject *args)
+static PyObject *py_gluecard41_del(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -2222,7 +2222,7 @@ static PyObject *py_gluecard41_del(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_gluecard41_acc_stats(PyObject *self, PyObject *args)
+static PyObject *py_gluecard41_acc_stats(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -2248,9 +2248,20 @@ static PyObject *py_gluecard41_acc_stats(PyObject *self, PyObject *args)
 // API for Glucose 3.0
 //=============================================================================
 #ifdef WITH_GLUCOSE30
-static PyObject *py_glucose3_new(PyObject *self, PyObject *args)
+static PyObject *py_glucose3_new(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	Glucose30::Solver *s = new Glucose30::Solver();
+
+    const double *seed;
+
+    static char *kwlist[] = {"random_seed", NULL};
+
+    if (PyArg_ParseTupleAndKeywords(args, kwargs, "d", kwlist,
+                                     &seed)) {
+        printf("-- Seed is %d\n", *seed);
+        s->random_seed = *seed;
+    }
+
 
 	if (s == NULL) {
 		PyErr_SetString(PyExc_RuntimeError,
@@ -2315,7 +2326,7 @@ static inline bool glucose3_iterate(
 
 //
 //=============================================================================
-static PyObject *py_glucose3_add_cl(PyObject *self, PyObject *args)
+static PyObject *py_glucose3_add_cl(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *c_obj;
@@ -2342,7 +2353,7 @@ static PyObject *py_glucose3_add_cl(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_glucose3_solve(PyObject *self, PyObject *args)
+static PyObject *py_glucose3_solve(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *a_obj;  // assumptions
@@ -2383,7 +2394,7 @@ static PyObject *py_glucose3_solve(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_glucose3_solve_lim(PyObject *self, PyObject *args)
+static PyObject *py_glucose3_solve_lim(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *a_obj;  // assumptions
@@ -2436,7 +2447,7 @@ static PyObject *py_glucose3_solve_lim(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_glucose3_propagate(PyObject *self, PyObject *args)
+static PyObject *py_glucose3_propagate(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *a_obj;  // assumptions
@@ -2489,7 +2500,7 @@ static PyObject *py_glucose3_propagate(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_glucose3_setphases(PyObject *self, PyObject *args)
+static PyObject *py_glucose3_setphases(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *p_obj;  // polarities given as a list of integer literals
@@ -2516,7 +2527,7 @@ static PyObject *py_glucose3_setphases(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_glucose3_cbudget(PyObject *self, PyObject *args)
+static PyObject *py_glucose3_cbudget(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	int64_t budget;
@@ -2537,7 +2548,7 @@ static PyObject *py_glucose3_cbudget(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_glucose3_pbudget(PyObject *self, PyObject *args)
+static PyObject *py_glucose3_pbudget(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	int64_t budget;
@@ -2558,7 +2569,7 @@ static PyObject *py_glucose3_pbudget(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_glucose3_interrupt(PyObject *self, PyObject *args)
+static PyObject *py_glucose3_interrupt(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -2575,7 +2586,7 @@ static PyObject *py_glucose3_interrupt(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_glucose3_clearint(PyObject *self, PyObject *args)
+static PyObject *py_glucose3_clearint(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -2592,7 +2603,7 @@ static PyObject *py_glucose3_clearint(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_glucose3_setincr(PyObject *self, PyObject *args)
+static PyObject *py_glucose3_setincr(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -2609,7 +2620,7 @@ static PyObject *py_glucose3_setincr(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_glucose3_tracepr(PyObject *self, PyObject *args)
+static PyObject *py_glucose3_tracepr(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *p_obj;
@@ -2650,7 +2661,7 @@ static PyObject *py_glucose3_tracepr(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_glucose3_core(PyObject *self, PyObject *args)
+static PyObject *py_glucose3_core(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -2681,7 +2692,7 @@ static PyObject *py_glucose3_core(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_glucose3_model(PyObject *self, PyObject *args)
+static PyObject *py_glucose3_model(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -2715,7 +2726,7 @@ static PyObject *py_glucose3_model(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_glucose3_nof_vars(PyObject *self, PyObject *args)
+static PyObject *py_glucose3_nof_vars(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -2733,7 +2744,7 @@ static PyObject *py_glucose3_nof_vars(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_glucose3_nof_cls(PyObject *self, PyObject *args)
+static PyObject *py_glucose3_nof_cls(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -2751,7 +2762,7 @@ static PyObject *py_glucose3_nof_cls(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_glucose3_del(PyObject *self, PyObject *args)
+static PyObject *py_glucose3_del(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -2777,7 +2788,7 @@ static PyObject *py_glucose3_del(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_glucose3_acc_stats(PyObject *self, PyObject *args)
+static PyObject *py_glucose3_acc_stats(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -2803,9 +2814,19 @@ static PyObject *py_glucose3_acc_stats(PyObject *self, PyObject *args)
 // API for Glucose 4.1
 //=============================================================================
 #ifdef WITH_GLUCOSE41
-static PyObject *py_glucose41_new(PyObject *self, PyObject *args)
+static PyObject *py_glucose41_new(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	Glucose41::Solver *s = new Glucose41::Solver();
+
+    const double *seed;
+
+    static char *kwlist[] = {"random_seed", NULL};
+
+    if (PyArg_ParseTupleAndKeywords(args, kwargs, "d", kwlist,
+                                     &seed)) {
+        printf("-- Seed is %d\n", *seed);
+        s->random_seed = *seed;
+    }
 
 	if (s == NULL) {
 		PyErr_SetString(PyExc_RuntimeError,
@@ -2870,7 +2891,7 @@ static inline bool glucose41_iterate(
 
 //
 //=============================================================================
-static PyObject *py_glucose41_add_cl(PyObject *self, PyObject *args)
+static PyObject *py_glucose41_add_cl(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *c_obj;
@@ -2897,7 +2918,7 @@ static PyObject *py_glucose41_add_cl(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_glucose41_solve(PyObject *self, PyObject *args)
+static PyObject *py_glucose41_solve(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *a_obj;  // assumptions
@@ -2938,7 +2959,7 @@ static PyObject *py_glucose41_solve(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_glucose41_solve_lim(PyObject *self, PyObject *args)
+static PyObject *py_glucose41_solve_lim(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *a_obj;  // assumptions
@@ -2991,7 +3012,7 @@ static PyObject *py_glucose41_solve_lim(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_glucose41_propagate(PyObject *self, PyObject *args)
+static PyObject *py_glucose41_propagate(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *a_obj;  // assumptions
@@ -3044,7 +3065,7 @@ static PyObject *py_glucose41_propagate(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_glucose41_setphases(PyObject *self, PyObject *args)
+static PyObject *py_glucose41_setphases(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *p_obj;  // polarities given as a list of integer literals
@@ -3071,7 +3092,7 @@ static PyObject *py_glucose41_setphases(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_glucose41_cbudget(PyObject *self, PyObject *args)
+static PyObject *py_glucose41_cbudget(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	int64_t budget;
@@ -3092,7 +3113,7 @@ static PyObject *py_glucose41_cbudget(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_glucose41_pbudget(PyObject *self, PyObject *args)
+static PyObject *py_glucose41_pbudget(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	int64_t budget;
@@ -3113,7 +3134,7 @@ static PyObject *py_glucose41_pbudget(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_glucose41_interrupt(PyObject *self, PyObject *args)
+static PyObject *py_glucose41_interrupt(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -3130,7 +3151,7 @@ static PyObject *py_glucose41_interrupt(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_glucose41_clearint(PyObject *self, PyObject *args)
+static PyObject *py_glucose41_clearint(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -3147,7 +3168,7 @@ static PyObject *py_glucose41_clearint(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_glucose41_setincr(PyObject *self, PyObject *args)
+static PyObject *py_glucose41_setincr(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -3164,7 +3185,7 @@ static PyObject *py_glucose41_setincr(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_glucose41_tracepr(PyObject *self, PyObject *args)
+static PyObject *py_glucose41_tracepr(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *p_obj;
@@ -3205,7 +3226,7 @@ static PyObject *py_glucose41_tracepr(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_glucose41_core(PyObject *self, PyObject *args)
+static PyObject *py_glucose41_core(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -3236,7 +3257,7 @@ static PyObject *py_glucose41_core(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_glucose41_model(PyObject *self, PyObject *args)
+static PyObject *py_glucose41_model(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -3270,7 +3291,7 @@ static PyObject *py_glucose41_model(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_glucose41_nof_vars(PyObject *self, PyObject *args)
+static PyObject *py_glucose41_nof_vars(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -3288,7 +3309,7 @@ static PyObject *py_glucose41_nof_vars(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_glucose41_nof_cls(PyObject *self, PyObject *args)
+static PyObject *py_glucose41_nof_cls(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -3306,7 +3327,7 @@ static PyObject *py_glucose41_nof_cls(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_glucose41_del(PyObject *self, PyObject *args)
+static PyObject *py_glucose41_del(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -3332,7 +3353,7 @@ static PyObject *py_glucose41_del(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_glucose41_acc_stats(PyObject *self, PyObject *args)
+static PyObject *py_glucose41_acc_stats(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -3358,7 +3379,7 @@ static PyObject *py_glucose41_acc_stats(PyObject *self, PyObject *args)
 // API for Lingeling
 //=============================================================================
 #ifdef WITH_LINGELING
-static PyObject *py_lingeling_new(PyObject *self, PyObject *args)
+static PyObject *py_lingeling_new(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	LGL *s = lglinit();
 
@@ -3375,7 +3396,7 @@ static PyObject *py_lingeling_new(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_lingeling_add_cl(PyObject *self, PyObject *args)
+static PyObject *py_lingeling_add_cl(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *c_obj;
@@ -3425,7 +3446,7 @@ static PyObject *py_lingeling_add_cl(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_lingeling_tracepr(PyObject *self, PyObject *args)
+static PyObject *py_lingeling_tracepr(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *p_obj;
@@ -3467,7 +3488,7 @@ static PyObject *py_lingeling_tracepr(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_lingeling_solve(PyObject *self, PyObject *args)
+static PyObject *py_lingeling_solve(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *a_obj;  // assumptions
@@ -3531,7 +3552,7 @@ static PyObject *py_lingeling_solve(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_lingeling_setphases(PyObject *self, PyObject *args)
+static PyObject *py_lingeling_setphases(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *p_obj;  // polarities given as a list of integer literals
@@ -3577,7 +3598,7 @@ static PyObject *py_lingeling_setphases(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_lingeling_core(PyObject *self, PyObject *args)
+static PyObject *py_lingeling_core(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *a_obj;  // assumptions
@@ -3617,7 +3638,7 @@ static PyObject *py_lingeling_core(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_lingeling_model(PyObject *self, PyObject *args)
+static PyObject *py_lingeling_model(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -3647,7 +3668,7 @@ static PyObject *py_lingeling_model(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_lingeling_nof_vars(PyObject *self, PyObject *args)
+static PyObject *py_lingeling_nof_vars(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -3665,7 +3686,7 @@ static PyObject *py_lingeling_nof_vars(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_lingeling_nof_cls(PyObject *self, PyObject *args)
+static PyObject *py_lingeling_nof_cls(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -3683,7 +3704,7 @@ static PyObject *py_lingeling_nof_cls(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_lingeling_del(PyObject *self, PyObject *args)
+static PyObject *py_lingeling_del(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *p_obj;
@@ -3710,7 +3731,7 @@ static PyObject *py_lingeling_del(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_lingeling_acc_stats(PyObject *self, PyObject *args)
+static PyObject *py_lingeling_acc_stats(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -3732,9 +3753,20 @@ static PyObject *py_lingeling_acc_stats(PyObject *self, PyObject *args)
 // API for MapleChrono
 //=============================================================================
 #ifdef WITH_MAPLECHRONO
-static PyObject *py_maplechrono_new(PyObject *self, PyObject *args)
+static PyObject *py_maplechrono_new(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	MapleChrono::Solver *s = new MapleChrono::Solver();
+
+    const double *seed;
+
+    static char *kwlist[] = {"random_seed", NULL};
+
+    if (PyArg_ParseTupleAndKeywords(args, kwargs, "d", kwlist,
+                                     &seed)) {
+        printf("-- Seed is %d\n", *seed);
+        s->random_seed = *seed;
+    }
+
 
 	if (s == NULL) {
 		PyErr_SetString(PyExc_RuntimeError,
@@ -3802,7 +3834,7 @@ static inline bool maplechrono_iterate(
 
 //
 //=============================================================================
-static PyObject *py_maplechrono_add_cl(PyObject *self, PyObject *args)
+static PyObject *py_maplechrono_add_cl(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *c_obj;
@@ -3829,7 +3861,7 @@ static PyObject *py_maplechrono_add_cl(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplechrono_solve(PyObject *self, PyObject *args)
+static PyObject *py_maplechrono_solve(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *a_obj;  // assumptions
@@ -3870,7 +3902,7 @@ static PyObject *py_maplechrono_solve(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplechrono_solve_lim(PyObject *self, PyObject *args)
+static PyObject *py_maplechrono_solve_lim(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *a_obj;  // assumptions
@@ -3923,7 +3955,7 @@ static PyObject *py_maplechrono_solve_lim(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplechrono_propagate(PyObject *self, PyObject *args)
+static PyObject *py_maplechrono_propagate(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *a_obj;  // assumptions
@@ -3976,7 +4008,7 @@ static PyObject *py_maplechrono_propagate(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplechrono_setphases(PyObject *self, PyObject *args)
+static PyObject *py_maplechrono_setphases(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *p_obj;  // polarities given as a list of integer literals
@@ -4003,7 +4035,7 @@ static PyObject *py_maplechrono_setphases(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplechrono_cbudget(PyObject *self, PyObject *args)
+static PyObject *py_maplechrono_cbudget(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	int64_t budget;
@@ -4024,7 +4056,7 @@ static PyObject *py_maplechrono_cbudget(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplechrono_pbudget(PyObject *self, PyObject *args)
+static PyObject *py_maplechrono_pbudget(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	int64_t budget;
@@ -4045,7 +4077,7 @@ static PyObject *py_maplechrono_pbudget(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplechrono_interrupt(PyObject *self, PyObject *args)
+static PyObject *py_maplechrono_interrupt(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -4062,7 +4094,7 @@ static PyObject *py_maplechrono_interrupt(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplechrono_clearint(PyObject *self, PyObject *args)
+static PyObject *py_maplechrono_clearint(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -4079,7 +4111,7 @@ static PyObject *py_maplechrono_clearint(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplechrono_tracepr(PyObject *self, PyObject *args)
+static PyObject *py_maplechrono_tracepr(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *p_obj;
@@ -4118,7 +4150,7 @@ static PyObject *py_maplechrono_tracepr(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplechrono_core(PyObject *self, PyObject *args)
+static PyObject *py_maplechrono_core(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -4149,7 +4181,7 @@ static PyObject *py_maplechrono_core(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplechrono_model(PyObject *self, PyObject *args)
+static PyObject *py_maplechrono_model(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -4183,7 +4215,7 @@ static PyObject *py_maplechrono_model(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplechrono_nof_vars(PyObject *self, PyObject *args)
+static PyObject *py_maplechrono_nof_vars(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -4201,7 +4233,7 @@ static PyObject *py_maplechrono_nof_vars(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplechrono_nof_cls(PyObject *self, PyObject *args)
+static PyObject *py_maplechrono_nof_cls(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -4219,7 +4251,7 @@ static PyObject *py_maplechrono_nof_cls(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplechrono_del(PyObject *self, PyObject *args)
+static PyObject *py_maplechrono_del(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -4245,7 +4277,7 @@ static PyObject *py_maplechrono_del(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplechrono_acc_stats(PyObject *self, PyObject *args)
+static PyObject *py_maplechrono_acc_stats(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -4271,7 +4303,7 @@ static PyObject *py_maplechrono_acc_stats(PyObject *self, PyObject *args)
 // API for Maplesat
 //=============================================================================
 #ifdef WITH_MAPLESAT
-static PyObject *py_maplesat_new(PyObject *self, PyObject *args)
+static PyObject *py_maplesat_new(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	Maplesat::Solver *s = new Maplesat::Solver();
 
@@ -4341,7 +4373,7 @@ static inline bool maplesat_iterate(
 
 //
 //=============================================================================
-static PyObject *py_maplesat_add_cl(PyObject *self, PyObject *args)
+static PyObject *py_maplesat_add_cl(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *c_obj;
@@ -4368,7 +4400,7 @@ static PyObject *py_maplesat_add_cl(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplesat_solve(PyObject *self, PyObject *args)
+static PyObject *py_maplesat_solve(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *a_obj;  // assumptions
@@ -4409,7 +4441,7 @@ static PyObject *py_maplesat_solve(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplesat_solve_lim(PyObject *self, PyObject *args)
+static PyObject *py_maplesat_solve_lim(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *a_obj;  // assumptions
@@ -4462,7 +4494,7 @@ static PyObject *py_maplesat_solve_lim(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplesat_propagate(PyObject *self, PyObject *args)
+static PyObject *py_maplesat_propagate(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *a_obj;  // assumptions
@@ -4515,7 +4547,7 @@ static PyObject *py_maplesat_propagate(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplesat_setphases(PyObject *self, PyObject *args)
+static PyObject *py_maplesat_setphases(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *p_obj;  // polarities given as a list of integer literals
@@ -4542,7 +4574,7 @@ static PyObject *py_maplesat_setphases(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplesat_cbudget(PyObject *self, PyObject *args)
+static PyObject *py_maplesat_cbudget(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	int64_t budget;
@@ -4563,7 +4595,7 @@ static PyObject *py_maplesat_cbudget(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplesat_pbudget(PyObject *self, PyObject *args)
+static PyObject *py_maplesat_pbudget(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	int64_t budget;
@@ -4584,7 +4616,7 @@ static PyObject *py_maplesat_pbudget(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplesat_interrupt(PyObject *self, PyObject *args)
+static PyObject *py_maplesat_interrupt(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -4601,7 +4633,7 @@ static PyObject *py_maplesat_interrupt(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplesat_clearint(PyObject *self, PyObject *args)
+static PyObject *py_maplesat_clearint(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -4618,7 +4650,7 @@ static PyObject *py_maplesat_clearint(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplesat_tracepr(PyObject *self, PyObject *args)
+static PyObject *py_maplesat_tracepr(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *p_obj;
@@ -4657,7 +4689,7 @@ static PyObject *py_maplesat_tracepr(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplesat_core(PyObject *self, PyObject *args)
+static PyObject *py_maplesat_core(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -4688,7 +4720,7 @@ static PyObject *py_maplesat_core(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplesat_model(PyObject *self, PyObject *args)
+static PyObject *py_maplesat_model(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -4722,7 +4754,7 @@ static PyObject *py_maplesat_model(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplesat_nof_vars(PyObject *self, PyObject *args)
+static PyObject *py_maplesat_nof_vars(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -4740,7 +4772,7 @@ static PyObject *py_maplesat_nof_vars(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplesat_nof_cls(PyObject *self, PyObject *args)
+static PyObject *py_maplesat_nof_cls(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -4758,7 +4790,7 @@ static PyObject *py_maplesat_nof_cls(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplesat_del(PyObject *self, PyObject *args)
+static PyObject *py_maplesat_del(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -4784,7 +4816,7 @@ static PyObject *py_maplesat_del(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplesat_acc_stats(PyObject *self, PyObject *args)
+static PyObject *py_maplesat_acc_stats(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -4810,9 +4842,19 @@ static PyObject *py_maplesat_acc_stats(PyObject *self, PyObject *args)
 // API for MapleCM
 //=============================================================================
 #ifdef WITH_MAPLECM
-static PyObject *py_maplecm_new(PyObject *self, PyObject *args)
+static PyObject *py_maplecm_new(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	MapleCM::Solver *s = new MapleCM::Solver();
+
+    const double *seed;
+
+    static char *kwlist[] = {"random_seed", NULL};
+
+    if (PyArg_ParseTupleAndKeywords(args, kwargs, "d", kwlist,
+                                     &seed)) {
+        printf("-- Seed is %d\n", *seed);
+        s->random_seed = *seed;
+    }
 
 	if (s == NULL) {
 		PyErr_SetString(PyExc_RuntimeError,
@@ -4880,7 +4922,7 @@ static inline bool maplecm_iterate(
 
 //
 //=============================================================================
-static PyObject *py_maplecm_add_cl(PyObject *self, PyObject *args)
+static PyObject *py_maplecm_add_cl(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *c_obj;
@@ -4907,7 +4949,7 @@ static PyObject *py_maplecm_add_cl(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplecm_solve(PyObject *self, PyObject *args)
+static PyObject *py_maplecm_solve(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *a_obj;  // assumptions
@@ -4948,7 +4990,7 @@ static PyObject *py_maplecm_solve(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplecm_solve_lim(PyObject *self, PyObject *args)
+static PyObject *py_maplecm_solve_lim(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *a_obj;  // assumptions
@@ -5001,7 +5043,7 @@ static PyObject *py_maplecm_solve_lim(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplecm_propagate(PyObject *self, PyObject *args)
+static PyObject *py_maplecm_propagate(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *a_obj;  // assumptions
@@ -5054,7 +5096,7 @@ static PyObject *py_maplecm_propagate(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplecm_setphases(PyObject *self, PyObject *args)
+static PyObject *py_maplecm_setphases(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *p_obj;  // polarities given as a list of integer literals
@@ -5081,7 +5123,7 @@ static PyObject *py_maplecm_setphases(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplecm_cbudget(PyObject *self, PyObject *args)
+static PyObject *py_maplecm_cbudget(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	int64_t budget;
@@ -5102,7 +5144,7 @@ static PyObject *py_maplecm_cbudget(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplecm_pbudget(PyObject *self, PyObject *args)
+static PyObject *py_maplecm_pbudget(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	int64_t budget;
@@ -5123,7 +5165,7 @@ static PyObject *py_maplecm_pbudget(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplecm_interrupt(PyObject *self, PyObject *args)
+static PyObject *py_maplecm_interrupt(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -5140,7 +5182,7 @@ static PyObject *py_maplecm_interrupt(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplecm_clearint(PyObject *self, PyObject *args)
+static PyObject *py_maplecm_clearint(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -5157,7 +5199,7 @@ static PyObject *py_maplecm_clearint(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplecm_tracepr(PyObject *self, PyObject *args)
+static PyObject *py_maplecm_tracepr(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *p_obj;
@@ -5196,7 +5238,7 @@ static PyObject *py_maplecm_tracepr(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplecm_core(PyObject *self, PyObject *args)
+static PyObject *py_maplecm_core(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -5227,7 +5269,7 @@ static PyObject *py_maplecm_core(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplecm_model(PyObject *self, PyObject *args)
+static PyObject *py_maplecm_model(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -5261,7 +5303,7 @@ static PyObject *py_maplecm_model(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplecm_nof_vars(PyObject *self, PyObject *args)
+static PyObject *py_maplecm_nof_vars(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -5279,7 +5321,7 @@ static PyObject *py_maplecm_nof_vars(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplecm_nof_cls(PyObject *self, PyObject *args)
+static PyObject *py_maplecm_nof_cls(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -5297,7 +5339,7 @@ static PyObject *py_maplecm_nof_cls(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplecm_del(PyObject *self, PyObject *args)
+static PyObject *py_maplecm_del(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -5323,7 +5365,7 @@ static PyObject *py_maplecm_del(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_maplecm_acc_stats(PyObject *self, PyObject *args)
+static PyObject *py_maplecm_acc_stats(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -5349,7 +5391,7 @@ static PyObject *py_maplecm_acc_stats(PyObject *self, PyObject *args)
 // API for MergeSat 3
 //=============================================================================
 #ifdef WITH_MERGESAT3
-static PyObject *py_mergesat3_new(PyObject *self, PyObject *args)
+static PyObject *py_mergesat3_new(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	MergeSat3::Solver *s = new MergeSat3::Solver();
 
@@ -5416,7 +5458,7 @@ static inline bool mergesat3_iterate(
 
 //
 //=============================================================================
-static PyObject *py_mergesat3_add_cl(PyObject *self, PyObject *args)
+static PyObject *py_mergesat3_add_cl(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *c_obj;
@@ -5443,7 +5485,7 @@ static PyObject *py_mergesat3_add_cl(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_mergesat3_solve(PyObject *self, PyObject *args)
+static PyObject *py_mergesat3_solve(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *a_obj;  // assumptions
@@ -5484,7 +5526,7 @@ static PyObject *py_mergesat3_solve(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_mergesat3_solve_lim(PyObject *self, PyObject *args)
+static PyObject *py_mergesat3_solve_lim(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *a_obj;  // assumptions
@@ -5537,7 +5579,7 @@ static PyObject *py_mergesat3_solve_lim(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_mergesat3_propagate(PyObject *self, PyObject *args)
+static PyObject *py_mergesat3_propagate(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *a_obj;  // assumptions
@@ -5590,7 +5632,7 @@ static PyObject *py_mergesat3_propagate(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_mergesat3_setphases(PyObject *self, PyObject *args)
+static PyObject *py_mergesat3_setphases(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *p_obj;  // polarities given as a list of integer literals
@@ -5617,7 +5659,7 @@ static PyObject *py_mergesat3_setphases(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_mergesat3_cbudget(PyObject *self, PyObject *args)
+static PyObject *py_mergesat3_cbudget(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	int64_t budget;
@@ -5638,7 +5680,7 @@ static PyObject *py_mergesat3_cbudget(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_mergesat3_pbudget(PyObject *self, PyObject *args)
+static PyObject *py_mergesat3_pbudget(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	int64_t budget;
@@ -5659,7 +5701,7 @@ static PyObject *py_mergesat3_pbudget(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_mergesat3_interrupt(PyObject *self, PyObject *args)
+static PyObject *py_mergesat3_interrupt(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -5676,7 +5718,7 @@ static PyObject *py_mergesat3_interrupt(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_mergesat3_clearint(PyObject *self, PyObject *args)
+static PyObject *py_mergesat3_clearint(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -5693,7 +5735,7 @@ static PyObject *py_mergesat3_clearint(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_mergesat3_core(PyObject *self, PyObject *args)
+static PyObject *py_mergesat3_core(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -5724,7 +5766,7 @@ static PyObject *py_mergesat3_core(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_mergesat3_model(PyObject *self, PyObject *args)
+static PyObject *py_mergesat3_model(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -5758,7 +5800,7 @@ static PyObject *py_mergesat3_model(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_mergesat3_nof_vars(PyObject *self, PyObject *args)
+static PyObject *py_mergesat3_nof_vars(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -5776,7 +5818,7 @@ static PyObject *py_mergesat3_nof_vars(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_mergesat3_nof_cls(PyObject *self, PyObject *args)
+static PyObject *py_mergesat3_nof_cls(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -5794,7 +5836,7 @@ static PyObject *py_mergesat3_nof_cls(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_mergesat3_del(PyObject *self, PyObject *args)
+static PyObject *py_mergesat3_del(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -5810,7 +5852,7 @@ static PyObject *py_mergesat3_del(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_mergesat3_acc_stats(PyObject *self, PyObject *args)
+static PyObject *py_mergesat3_acc_stats(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -5836,7 +5878,7 @@ static PyObject *py_mergesat3_acc_stats(PyObject *self, PyObject *args)
 // API for Minicard
 //=============================================================================
 #ifdef WITH_MINICARD
-static PyObject *py_minicard_new(PyObject *self, PyObject *args)
+static PyObject *py_minicard_new(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	Minicard::Solver *s = new Minicard::Solver();
 
@@ -5903,7 +5945,7 @@ static inline bool minicard_iterate(
 
 //
 //=============================================================================
-static PyObject *py_minicard_add_cl(PyObject *self, PyObject *args)
+static PyObject *py_minicard_add_cl(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *c_obj;
@@ -5930,7 +5972,7 @@ static PyObject *py_minicard_add_cl(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minicard_add_am(PyObject *self, PyObject *args)
+static PyObject *py_minicard_add_am(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *c_obj;
@@ -5958,7 +6000,7 @@ static PyObject *py_minicard_add_am(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minicard_solve(PyObject *self, PyObject *args)
+static PyObject *py_minicard_solve(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *a_obj;  // assumptions
@@ -5999,7 +6041,7 @@ static PyObject *py_minicard_solve(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minicard_solve_lim(PyObject *self, PyObject *args)
+static PyObject *py_minicard_solve_lim(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *a_obj;  // assumptions
@@ -6052,7 +6094,7 @@ static PyObject *py_minicard_solve_lim(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minicard_propagate(PyObject *self, PyObject *args)
+static PyObject *py_minicard_propagate(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *a_obj;  // assumptions
@@ -6105,7 +6147,7 @@ static PyObject *py_minicard_propagate(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minicard_setphases(PyObject *self, PyObject *args)
+static PyObject *py_minicard_setphases(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *p_obj;  // polarities given as a list of integer literals
@@ -6132,7 +6174,7 @@ static PyObject *py_minicard_setphases(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minicard_cbudget(PyObject *self, PyObject *args)
+static PyObject *py_minicard_cbudget(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	int64_t budget;
@@ -6153,7 +6195,7 @@ static PyObject *py_minicard_cbudget(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minicard_pbudget(PyObject *self, PyObject *args)
+static PyObject *py_minicard_pbudget(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	int64_t budget;
@@ -6174,7 +6216,7 @@ static PyObject *py_minicard_pbudget(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minicard_interrupt(PyObject *self, PyObject *args)
+static PyObject *py_minicard_interrupt(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -6191,7 +6233,7 @@ static PyObject *py_minicard_interrupt(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minicard_clearint(PyObject *self, PyObject *args)
+static PyObject *py_minicard_clearint(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -6208,7 +6250,7 @@ static PyObject *py_minicard_clearint(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minicard_core(PyObject *self, PyObject *args)
+static PyObject *py_minicard_core(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -6239,7 +6281,7 @@ static PyObject *py_minicard_core(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minicard_model(PyObject *self, PyObject *args)
+static PyObject *py_minicard_model(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -6273,7 +6315,7 @@ static PyObject *py_minicard_model(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minicard_nof_vars(PyObject *self, PyObject *args)
+static PyObject *py_minicard_nof_vars(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -6291,7 +6333,7 @@ static PyObject *py_minicard_nof_vars(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minicard_nof_cls(PyObject *self, PyObject *args)
+static PyObject *py_minicard_nof_cls(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -6309,7 +6351,7 @@ static PyObject *py_minicard_nof_cls(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minicard_del(PyObject *self, PyObject *args)
+static PyObject *py_minicard_del(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -6325,7 +6367,7 @@ static PyObject *py_minicard_del(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minicard_acc_stats(PyObject *self, PyObject *args)
+static PyObject *py_minicard_acc_stats(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -6351,7 +6393,7 @@ static PyObject *py_minicard_acc_stats(PyObject *self, PyObject *args)
 // API for MiniSat 2.2
 //=============================================================================
 #ifdef WITH_MINISAT22
-static PyObject *py_minisat22_new(PyObject *self, PyObject *args)
+static PyObject *py_minisat22_new(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	Minisat22::Solver *s = new Minisat22::Solver();
 
@@ -6418,7 +6460,7 @@ static inline bool minisat22_iterate(
 
 //
 //=============================================================================
-static PyObject *py_minisat22_add_cl(PyObject *self, PyObject *args)
+static PyObject *py_minisat22_add_cl(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *c_obj;
@@ -6445,7 +6487,7 @@ static PyObject *py_minisat22_add_cl(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minisat22_solve(PyObject *self, PyObject *args)
+static PyObject *py_minisat22_solve(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *a_obj;  // assumptions
@@ -6486,7 +6528,7 @@ static PyObject *py_minisat22_solve(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minisat22_solve_lim(PyObject *self, PyObject *args)
+static PyObject *py_minisat22_solve_lim(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *a_obj;  // assumptions
@@ -6539,7 +6581,7 @@ static PyObject *py_minisat22_solve_lim(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minisat22_propagate(PyObject *self, PyObject *args)
+static PyObject *py_minisat22_propagate(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *a_obj;  // assumptions
@@ -6592,7 +6634,7 @@ static PyObject *py_minisat22_propagate(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minisat22_setphases(PyObject *self, PyObject *args)
+static PyObject *py_minisat22_setphases(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *p_obj;  // polarities given as a list of integer literals
@@ -6619,7 +6661,7 @@ static PyObject *py_minisat22_setphases(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minisat22_cbudget(PyObject *self, PyObject *args)
+static PyObject *py_minisat22_cbudget(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	int64_t budget;
@@ -6640,7 +6682,7 @@ static PyObject *py_minisat22_cbudget(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minisat22_pbudget(PyObject *self, PyObject *args)
+static PyObject *py_minisat22_pbudget(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	int64_t budget;
@@ -6661,7 +6703,7 @@ static PyObject *py_minisat22_pbudget(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minisat22_interrupt(PyObject *self, PyObject *args)
+static PyObject *py_minisat22_interrupt(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -6678,7 +6720,7 @@ static PyObject *py_minisat22_interrupt(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minisat22_clearint(PyObject *self, PyObject *args)
+static PyObject *py_minisat22_clearint(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -6695,7 +6737,7 @@ static PyObject *py_minisat22_clearint(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minisat22_core(PyObject *self, PyObject *args)
+static PyObject *py_minisat22_core(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -6726,7 +6768,7 @@ static PyObject *py_minisat22_core(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minisat22_model(PyObject *self, PyObject *args)
+static PyObject *py_minisat22_model(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -6760,7 +6802,7 @@ static PyObject *py_minisat22_model(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minisat22_nof_vars(PyObject *self, PyObject *args)
+static PyObject *py_minisat22_nof_vars(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -6778,7 +6820,7 @@ static PyObject *py_minisat22_nof_vars(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minisat22_nof_cls(PyObject *self, PyObject *args)
+static PyObject *py_minisat22_nof_cls(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -6796,7 +6838,7 @@ static PyObject *py_minisat22_nof_cls(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minisat22_del(PyObject *self, PyObject *args)
+static PyObject *py_minisat22_del(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -6812,7 +6854,7 @@ static PyObject *py_minisat22_del(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minisat22_acc_stats(PyObject *self, PyObject *args)
+static PyObject *py_minisat22_acc_stats(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -6838,7 +6880,7 @@ static PyObject *py_minisat22_acc_stats(PyObject *self, PyObject *args)
 // API for MiniSat from github
 //=============================================================================
 #ifdef WITH_MINISATGH
-static PyObject *py_minisatgh_new(PyObject *self, PyObject *args)
+static PyObject *py_minisatgh_new(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	MinisatGH::Solver *s = new MinisatGH::Solver();
 
@@ -6905,7 +6947,7 @@ static inline bool minisatgh_iterate(
 
 //
 //=============================================================================
-static PyObject *py_minisatgh_add_cl(PyObject *self, PyObject *args)
+static PyObject *py_minisatgh_add_cl(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *c_obj;
@@ -6932,7 +6974,7 @@ static PyObject *py_minisatgh_add_cl(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minisatgh_solve(PyObject *self, PyObject *args)
+static PyObject *py_minisatgh_solve(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *a_obj;  // assumptions
@@ -6973,7 +7015,7 @@ static PyObject *py_minisatgh_solve(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minisatgh_solve_lim(PyObject *self, PyObject *args)
+static PyObject *py_minisatgh_solve_lim(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *a_obj;  // assumptions
@@ -7026,7 +7068,7 @@ static PyObject *py_minisatgh_solve_lim(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minisatgh_propagate(PyObject *self, PyObject *args)
+static PyObject *py_minisatgh_propagate(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *a_obj;  // assumptions
@@ -7079,7 +7121,7 @@ static PyObject *py_minisatgh_propagate(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minisatgh_setphases(PyObject *self, PyObject *args)
+static PyObject *py_minisatgh_setphases(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	PyObject *p_obj;  // polarities given as a list of integer literals
@@ -7106,7 +7148,7 @@ static PyObject *py_minisatgh_setphases(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minisatgh_cbudget(PyObject *self, PyObject *args)
+static PyObject *py_minisatgh_cbudget(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	int64_t budget;
@@ -7127,7 +7169,7 @@ static PyObject *py_minisatgh_cbudget(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minisatgh_pbudget(PyObject *self, PyObject *args)
+static PyObject *py_minisatgh_pbudget(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 	int64_t budget;
@@ -7148,7 +7190,7 @@ static PyObject *py_minisatgh_pbudget(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minisatgh_interrupt(PyObject *self, PyObject *args)
+static PyObject *py_minisatgh_interrupt(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -7165,7 +7207,7 @@ static PyObject *py_minisatgh_interrupt(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minisatgh_clearint(PyObject *self, PyObject *args)
+static PyObject *py_minisatgh_clearint(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -7182,7 +7224,7 @@ static PyObject *py_minisatgh_clearint(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minisatgh_core(PyObject *self, PyObject *args)
+static PyObject *py_minisatgh_core(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -7213,7 +7255,7 @@ static PyObject *py_minisatgh_core(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minisatgh_model(PyObject *self, PyObject *args)
+static PyObject *py_minisatgh_model(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -7247,7 +7289,7 @@ static PyObject *py_minisatgh_model(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minisatgh_nof_vars(PyObject *self, PyObject *args)
+static PyObject *py_minisatgh_nof_vars(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -7265,7 +7307,7 @@ static PyObject *py_minisatgh_nof_vars(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minisatgh_nof_cls(PyObject *self, PyObject *args)
+static PyObject *py_minisatgh_nof_cls(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -7283,7 +7325,7 @@ static PyObject *py_minisatgh_nof_cls(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minisatgh_del(PyObject *self, PyObject *args)
+static PyObject *py_minisatgh_del(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
@@ -7299,7 +7341,7 @@ static PyObject *py_minisatgh_del(PyObject *self, PyObject *args)
 
 //
 //=============================================================================
-static PyObject *py_minisatgh_acc_stats(PyObject *self, PyObject *args)
+static PyObject *py_minisatgh_acc_stats(PyObject *self, PyObject *args, PyObject *kwargs)
 {
 	PyObject *s_obj;
 
