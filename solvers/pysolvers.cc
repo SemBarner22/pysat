@@ -2252,15 +2252,43 @@ static PyObject *py_glucose3_new(PyObject *self, PyObject *args, PyObject *kwarg
 {
 	Glucose30::Solver *s = new Glucose30::Solver();
 
-    const double *seed;
+    PyObject *pyX = NULL;
+
+    double *seed = nullptr;
 
     static char *kwlist[] = {"random_seed", NULL};
 
-    if (PyArg_ParseTupleAndKeywords(args, kwargs, "d", kwlist,
-                                     &seed)) {
-        printf("-- Seed is %d\n", *seed);
-        s->random_seed = *seed;
+    PyObject *empty = PyTuple_New(0);
+
+    if (PyArg_ParseTupleAndKeywords(empty, kwargs, "|O:value", const_cast<char**>(kwlist), &pyX)) {
+
+//        pyX = Py_BuildValue("l", 123);
+        double x = (double) PyLong_AsDouble(pyX);
+
+        s->random_seed = x;
+//        *seed=0.54645645;
+        printf("doing parsing %f\n", x);
+//        if (*seed != 0) {
+//            printf("is not 0\n");
+//            printf("-- Seed is %f\n", *seed);
+//            s->random_seed = *seed;
+//        } else {
+            printf("is 0\n");
+//        }
+    } else {
+        printf("can not parsing\n");
     }
+
+
+//    const double *seed;
+//
+//    static char *kwlist[] = {"random_seed", NULL};
+//
+//    if (PyArg_ParseTupleAndKeywords(args, kwargs, "d", kwlist,
+//                                     &seed)) {
+//        printf("-- Seed is %d\n", *seed);
+//        s->random_seed = *seed;
+//    }
 
 
 	if (s == NULL) {
@@ -2818,15 +2846,15 @@ static PyObject *py_glucose41_new(PyObject *self, PyObject *args, PyObject *kwar
 {
 	Glucose41::Solver *s = new Glucose41::Solver();
 
-    const double *seed;
-
-    static char *kwlist[] = {"random_seed", NULL};
-
-    if (PyArg_ParseTupleAndKeywords(args, kwargs, "d", kwlist,
-                                     &seed)) {
-        printf("-- Seed is %d\n", *seed);
-        s->random_seed = *seed;
-    }
+//    const double *seed;
+//
+//    static char *kwlist[] = {"random_seed", NULL};
+//
+//    if (PyArg_ParseTupleAndKeywords(args, kwargs, "d", kwlist,
+//                                     &seed)) {
+//        printf("-- Seed is %d\n", *seed);
+//        s->random_seed = *seed;
+//    }
 
 	if (s == NULL) {
 		PyErr_SetString(PyExc_RuntimeError,
@@ -3757,15 +3785,15 @@ static PyObject *py_maplechrono_new(PyObject *self, PyObject *args, PyObject *kw
 {
 	MapleChrono::Solver *s = new MapleChrono::Solver();
 
-    const double *seed;
-
-    static char *kwlist[] = {"random_seed", NULL};
-
-    if (PyArg_ParseTupleAndKeywords(args, kwargs, "d", kwlist,
-                                     &seed)) {
-        printf("-- Seed is %d\n", *seed);
-        s->random_seed = *seed;
-    }
+//    const double *seed;
+//
+//    static char *kwlist[] = {"random_seed", NULL};
+//
+//    if (PyArg_ParseTupleAndKeywords(args, kwargs, "d", kwlist,
+//                                     &seed)) {
+//        printf("-- Seed is %d\n", *seed);
+//        s->random_seed = *seed;
+//    }
 
 
 	if (s == NULL) {
@@ -4846,15 +4874,14 @@ static PyObject *py_maplecm_new(PyObject *self, PyObject *args, PyObject *kwargs
 {
 	MapleCM::Solver *s = new MapleCM::Solver();
 
-    const double *seed;
-
-    static char *kwlist[] = {"random_seed", NULL};
-
-    if (PyArg_ParseTupleAndKeywords(args, kwargs, "d", kwlist,
-                                     &seed)) {
-        printf("-- Seed is %d\n", *seed);
-        s->random_seed = *seed;
-    }
+//    double *seed;
+//
+//    static char *kwlist[] = {"random_seed", NULL};
+//
+//    if (PyArg_ParseTupleAndKeywords(args, kwargs, "d", kwlist, &seed)) {
+//        printf("-- Seed is %f\n", *seed);
+//        s->random_seed = *seed;
+//    }
 
 	if (s == NULL) {
 		PyErr_SetString(PyExc_RuntimeError,

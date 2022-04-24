@@ -2068,7 +2068,7 @@ class Glucose3(object):
     """
 
     def __init__(self, bootstrap_with=None, use_timer=False, incr=False,
-            with_proof=False):
+            with_proof=False, random_seed=239):
         """
             Basic constructor.
         """
@@ -2077,7 +2077,7 @@ class Glucose3(object):
         self.status = None
         self.prfile = None
 
-        self.new(bootstrap_with, use_timer, incr, with_proof)
+        self.new(bootstrap_with, use_timer, incr, with_proof, random_seed=random_seed)
 
     def __enter__(self):
         """
@@ -2103,7 +2103,10 @@ class Glucose3(object):
         assert not incr or not with_proof, 'Incremental mode and proof tracing cannot be set together.'
 
         if not self.glucose:
-            self.glucose = pysolvers.glucose3_new(random_seed=random_seed)
+            if random_seed == 239:
+                self.glucose = pysolvers.glucose3_new()
+            else:
+                self.glucose = pysolvers.glucose3_new(random_seed=random_seed)
 
             if bootstrap_with:
                 if type(bootstrap_with) == CNFPlus and bootstrap_with.atmosts:
@@ -2381,7 +2384,7 @@ class Glucose4(object):
     """
 
     def __init__(self, bootstrap_with=None, use_timer=False, incr=False,
-            with_proof=False):
+            with_proof=False, random_seed=239):
         """
             Basic constructor.
         """
@@ -2390,7 +2393,7 @@ class Glucose4(object):
         self.status = None
         self.prfile = None
 
-        self.new(bootstrap_with, use_timer, incr, with_proof)
+        self.new(bootstrap_with, use_timer, incr, with_proof, random_seed=random_seed)
 
     def __enter__(self):
         """
@@ -2416,7 +2419,9 @@ class Glucose4(object):
         assert not incr or not with_proof, 'Incremental mode and proof tracing cannot be set together.'
 
         if not self.glucose:
-            self.glucose = pysolvers.glucose41_new(random_seed=random_seed)
+            self.glucose = pysolvers.glucose41_new(
+                # random_seed=random_seed
+            )
 
             if bootstrap_with:
                 if type(bootstrap_with) == CNFPlus and bootstrap_with.atmosts:
@@ -2965,7 +2970,7 @@ class MapleChrono(object):
     """
 
     def __init__(self, bootstrap_with=None, use_timer=False, incr=False,
-            with_proof=False):
+            with_proof=False, random_seed=239):
         """
             Basic constructor.
         """
@@ -2977,7 +2982,7 @@ class MapleChrono(object):
         self.status = None
         self.prfile = None
 
-        self.new(bootstrap_with, use_timer, with_proof)
+        self.new(bootstrap_with, use_timer, with_proof, random_seed=random_seed)
 
     def __enter__(self):
         """
@@ -3000,7 +3005,9 @@ class MapleChrono(object):
         """
 
         if not self.maplesat:
-            self.maplesat = pysolvers.maplechrono_new(random_seed=random_seed)
+            self.maplesat = pysolvers.maplechrono_new(
+                # random_seed=random_seed
+            )
 
             if bootstrap_with:
                 if type(bootstrap_with) == CNFPlus and bootstrap_with.atmosts:
@@ -3275,7 +3282,7 @@ class MapleCM(object):
     """
 
     def __init__(self, bootstrap_with=None, use_timer=False, incr=False,
-            with_proof=False):
+            with_proof=False, random_seed=239):
         """
             Basic constructor.
         """
@@ -3287,7 +3294,7 @@ class MapleCM(object):
         self.status = None
         self.prfile = None
 
-        self.new(bootstrap_with, use_timer, with_proof)
+        self.new(bootstrap_with, use_timer, with_proof, random_seed=random_seed)
 
     def __enter__(self):
         """
@@ -3310,7 +3317,9 @@ class MapleCM(object):
         """
 
         if not self.maplesat:
-            self.maplesat = pysolvers.maplecm_new(random_seed=random_seed)
+            self.maplesat = pysolvers.maplecm_new(
+                # random_seed=random_seed
+            )
 
             if bootstrap_with:
                 if type(bootstrap_with) == CNFPlus and bootstrap_with.atmosts:
