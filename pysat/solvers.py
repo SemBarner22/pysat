@@ -2068,7 +2068,7 @@ class Glucose3(object):
     """
 
     def __init__(self, bootstrap_with=None, use_timer=False, incr=False,
-            with_proof=False):
+            with_proof=False, random_seed=None):
         """
             Basic constructor.
         """
@@ -2077,7 +2077,7 @@ class Glucose3(object):
         self.status = None
         self.prfile = None
 
-        self.new(bootstrap_with, use_timer, incr, with_proof)
+        self.new(bootstrap_with, use_timer, incr, with_proof, random_seed=random_seed)
 
     def __enter__(self):
         """
@@ -2095,7 +2095,7 @@ class Glucose3(object):
         self.glucose = None
 
     def new(self, bootstrap_with=None, use_timer=False, incr=False,
-            with_proof=False, random_seed=239):
+            with_proof=False, random_seed=None):
         """
             Actual constructor of the solver.
         """
@@ -2103,7 +2103,10 @@ class Glucose3(object):
         assert not incr or not with_proof, 'Incremental mode and proof tracing cannot be set together.'
 
         if not self.glucose:
-            self.glucose = pysolvers.glucose3_new(random_seed=random_seed)
+            if random_seed is None:
+                self.glucose = pysolvers.glucose3_new()
+            else:
+                self.glucose = pysolvers.glucose3_new(random_seed=random_seed)
 
             if bootstrap_with:
                 if type(bootstrap_with) == CNFPlus and bootstrap_with.atmosts:

@@ -2252,16 +2252,20 @@ static PyObject *py_glucose3_new(PyObject *self, PyObject *args, PyObject *kwarg
 {
 	Glucose30::Solver *s = new Glucose30::Solver();
 
-    const double *seed;
+    PyObject *pyX = NULL;
+
+    double *seed = nullptr;
 
     static char *kwlist[] = {"random_seed", NULL};
 
-    if (PyArg_ParseTupleAndKeywords(args, kwargs, "d", kwlist,
-                                     &seed)) {
-        printf("-- Seed is %d\n", *seed);
-        s->random_seed = *seed;
-    }
+    PyObject *empty = PyTuple_New(0);
 
+    if (PyArg_ParseTupleAndKeywords(empty, kwargs, "|O:value", const_cast<char**>(kwlist), &pyX)) {
+        if (pyX != NULL) {
+            double x = (double) PyLong_AsDouble(pyX);
+            s->random_seed = x;
+        }
+    }
 
 	if (s == NULL) {
 		PyErr_SetString(PyExc_RuntimeError,
