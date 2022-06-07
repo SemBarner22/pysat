@@ -266,8 +266,8 @@ class Solver(object):
             >>> from pysat.solvers import Solver, Minisat22
             >>>
             >>> s = Solver(name='g4')
-            >>> s.add_clause([-1, 2])
-            >>> s.add_clause([-1, -2])
+            >>> s.add_clause([-1, 2],)
+            >>> s.add_clause([-1, -2],)
             >>> s.solve()
             True
             >>> print(s.get_model())
@@ -677,7 +677,7 @@ class Solver(object):
                 >>> g.propagate(assumptions=[1])
                 (True, [1, -2, -3, -4, -5])
                 >>>
-                >>> g.add_clause([2])
+                >>> g.add_clause([2],)
                 >>> g.propagate(assumptions=[1])
                 (False, [])
                 >>>
@@ -743,6 +743,14 @@ class Solver(object):
         if self.solver:
             return self.solver.get_status()
 
+    def add_learnt_clauses(self, clauses):
+        if self.solver:
+            self.solver.add_learnt_clauses(clauses)
+
+    def add_fifo(self, fifo_name):
+        if self.solver:
+            self.solver.add_fifo(fifo_name)
+
     def get_model(self):
         """
             The method is to be used for extracting a satisfying assignment for
@@ -758,9 +766,9 @@ class Solver(object):
 
                 >>> from pysat.solvers import Solver
                 >>> s = Solver()
-                >>> s.add_clause([-1, 2])
-                >>> s.add_clause([-1, -2])
-                >>> s.add_clause([1, -2])
+                >>> s.add_clause([-1, 2],)
+                >>> s.add_clause([-1, -2],)
+                >>> s.add_clause([1, -2],)
                 >>> s.solve()
                 True
                 >>> print(s.get_model())
@@ -787,9 +795,9 @@ class Solver(object):
 
                 >>> from pysat.solvers import Minisat22
                 >>> m = Minisat22()
-                >>> m.add_clause([-1, 2])
-                >>> m.add_clause([-2, 3])
-                >>> m.add_clause([-3, 4])
+                >>> m.add_clause([-1, 2],)
+                >>> m.add_clause([-2, 3],)
+                >>> m.add_clause([-3, 4],)
                 >>> m.solve(assumptions=[1, 2, 3, -4])
                 False
                 >>> print(m.get_core())  # literals 2 and 3 are not in the core
@@ -816,7 +824,7 @@ class Solver(object):
                 >>>
                 >>> cnf = PHP(nof_holes=3)
                 >>> with Solver(name='g4', with_proof=True) as g:
-                ...     g.append_formula(cnf.clauses)
+                ...     g.append_formula(cnf.clauses,)
                 ...     g.solve()
                 False
                 ...     print(g.get_proof())
@@ -988,12 +996,12 @@ class Solver(object):
             .. code-block:: python
 
                 >>> s = Solver(bootstrap_with=[[-1, 2], [-1, -2]])
-                >>> s.add_clause([1], no_return=False)
+                >>> s.add_clause([1],)
                 False
         """
 
         if self.solver:
-            res = self.solver.add_clause(clause, no_return)
+            res = self.solver.add_clause(clause, )
             if not no_return:
                 return res
 
@@ -1056,12 +1064,12 @@ class Solver(object):
                 >>> cnf = CNF()
                 ... # assume the formula contains clauses
                 >>> s = Solver()
-                >>> s.append_formula(cnf.clauses, no_return=False)
+                >>> s.append_formula(cnf.clauses,)
                 True
         """
 
         if self.solver:
-            res = self.solver.append_formula(formula, no_return)
+            res = self.solver.append_formula(formula, )
             if not no_return:
                 return res
 
@@ -1140,13 +1148,16 @@ class Cadical(object):
     """
 
     def __init__(self, bootstrap_with=None, use_timer=False, incr=False,
-            with_proof=False):
+        with_proof=False, random_seed=None):
         """
             Basic constructor.
         """
 
         if incr:
             raise NotImplementedError('Incremental mode is not supported by CaDiCaL.')
+
+        if random_seed is None:
+            raise NotImplementedError('Random mode is not supported by CaDiCaL.')
 
         self.cadical = None
         self.status = None
@@ -1426,7 +1437,7 @@ class Gluecard3(object):
     """
 
     def __init__(self, bootstrap_with=None, use_timer=False, incr=False,
-            with_proof=False):
+                 with_proof=False, random_seed=None):
         """
             Basic constructor.
         """
@@ -1435,7 +1446,7 @@ class Gluecard3(object):
         self.status = None
         self.prfile = None
 
-        self.new(bootstrap_with, use_timer, incr, with_proof)
+        self.new(bootstrap_with, use_timer, incr, with_proof, random_seed)
 
     def __enter__(self):
         """
@@ -1453,7 +1464,7 @@ class Gluecard3(object):
         self.gluecard = None
 
     def new(self, bootstrap_with=None, use_timer=False, incr=False,
-            with_proof=False):
+            with_proof=False, random_seed=None):
         """
             Actual constructor of the solver.
         """
@@ -1461,7 +1472,10 @@ class Gluecard3(object):
         assert not incr or not with_proof, 'Incremental mode and proof tracing cannot be set together.'
 
         if not self.gluecard:
-            self.gluecard = pysolvers.gluecard3_new()
+            if random_seed is None:
+                self.gluecard = pysolvers.gluecard3_new()
+            else:
+                self.gluecard = pysolvers.gluecard3_new(random_seed=random_seed)
 
             if bootstrap_with:
                 for clause in bootstrap_with:
@@ -1747,7 +1761,7 @@ class Gluecard4(object):
     """
 
     def __init__(self, bootstrap_with=None, use_timer=False, incr=False,
-            with_proof=False):
+                 with_proof=False, random_seed=None):
         """
             Basic constructor.
         """
@@ -1774,7 +1788,7 @@ class Gluecard4(object):
         self.gluecard = None
 
     def new(self, bootstrap_with=None, use_timer=False, incr=False,
-            with_proof=False):
+            with_proof=False, random_seed=None):
         """
             Actual constructor of the solver.
         """
@@ -1782,7 +1796,10 @@ class Gluecard4(object):
         assert not incr or not with_proof, 'Incremental mode and proof tracing cannot be set together.'
 
         if not self.gluecard:
-            self.gluecard = pysolvers.gluecard41_new()
+            if random_seed is None:
+                self.gluecard = pysolvers.gluecard41_new()
+            else:
+                self.gluecard = pysolvers.gluecard41_new(random_seed=random_seed)
 
             if bootstrap_with:
                 for clause in bootstrap_with:
@@ -2094,6 +2111,15 @@ class Glucose3(object):
         self.delete()
         self.glucose = None
 
+    def add_learnt_clauses(self, clauses):
+        if self.glucose:
+            for clause in clauses:
+                pysolvers.glucose3_add_learnt(self.glucose, clause)
+
+    def add_fifo(self, fifo_name):
+        if self.glucose:
+            pysolvers.glucose3_fifo(self.glucose, fifo_name)
+
     def new(self, bootstrap_with=None, use_timer=False, incr=False,
             with_proof=False, random_seed=None):
         """
@@ -2384,7 +2410,7 @@ class Glucose4(object):
     """
 
     def __init__(self, bootstrap_with=None, use_timer=False, incr=False,
-            with_proof=False):
+                 with_proof=False, random_seed=None):
         """
             Basic constructor.
         """
@@ -2393,7 +2419,7 @@ class Glucose4(object):
         self.status = None
         self.prfile = None
 
-        self.new(bootstrap_with, use_timer, incr, with_proof)
+        self.new(bootstrap_with, use_timer, incr, with_proof, random_seed=random_seed)
 
     def __enter__(self):
         """
@@ -2411,7 +2437,7 @@ class Glucose4(object):
         self.glucose = None
 
     def new(self, bootstrap_with=None, use_timer=False, incr=False,
-            with_proof=False, random_seed=239):
+            with_proof=False, random_seed=None):
         """
             Actual constructor of the solver.
         """
@@ -2419,7 +2445,10 @@ class Glucose4(object):
         assert not incr or not with_proof, 'Incremental mode and proof tracing cannot be set together.'
 
         if not self.glucose:
-            self.glucose = pysolvers.glucose41_new(random_seed=random_seed)
+            if random_seed is None:
+                self.glucose = pysolvers.glucose41_new()
+            else:
+                self.glucose = pysolvers.glucose41_new(random_seed=random_seed)
 
             if bootstrap_with:
                 if type(bootstrap_with) == CNFPlus and bootstrap_with.atmosts:
@@ -2697,13 +2726,16 @@ class Lingeling(object):
     """
 
     def __init__(self, bootstrap_with=None, use_timer=False, incr=False,
-            with_proof=False):
+                 with_proof=False, random_seed=None):
         """
             Basic constructor.
         """
 
         if incr:
             raise NotImplementedError('Incremental mode is not supported by Lingeling.')
+
+        if random_seed is None:
+            raise NotImplementedError('Random mode is not supported by Lingeling.')
 
         self.lingeling = None
         self.status = None
@@ -2968,7 +3000,7 @@ class MapleChrono(object):
     """
 
     def __init__(self, bootstrap_with=None, use_timer=False, incr=False,
-            with_proof=False):
+                 with_proof=False, random_seed=None):
         """
             Basic constructor.
         """
@@ -2980,7 +3012,7 @@ class MapleChrono(object):
         self.status = None
         self.prfile = None
 
-        self.new(bootstrap_with, use_timer, with_proof)
+        self.new(bootstrap_with, use_timer, with_proof, random_seed=random_seed)
 
     def __enter__(self):
         """
@@ -2997,13 +3029,17 @@ class MapleChrono(object):
         self.delete()
         self.maplesat = None
 
-    def new(self, bootstrap_with=None, use_timer=False, with_proof=False, random_seed=239):
+    def new(self, bootstrap_with=None, use_timer=False,
+            with_proof=False, random_seed=None):
         """
             Actual constructor of the solver.
         """
 
         if not self.maplesat:
-            self.maplesat = pysolvers.maplechrono_new(random_seed=random_seed)
+            if random_seed is None:
+                self.maplesat = pysolvers.maplechrono_new()
+            else:
+                self.maplesat = pysolvers.maplechrono_new(random_seed=random_seed)
 
             if bootstrap_with:
                 if type(bootstrap_with) == CNFPlus and bootstrap_with.atmosts:
@@ -3278,7 +3314,7 @@ class MapleCM(object):
     """
 
     def __init__(self, bootstrap_with=None, use_timer=False, incr=False,
-            with_proof=False):
+                 with_proof=False, random_seed=None):
         """
             Basic constructor.
         """
@@ -3290,7 +3326,7 @@ class MapleCM(object):
         self.status = None
         self.prfile = None
 
-        self.new(bootstrap_with, use_timer, with_proof)
+        self.new(bootstrap_with, use_timer, with_proof, random_seed=random_seed)
 
     def __enter__(self):
         """
@@ -3307,13 +3343,17 @@ class MapleCM(object):
         self.delete()
         self.maplesat = None
 
-    def new(self, bootstrap_with=None, use_timer=False, with_proof=False, random_seed=239):
+    def new(self, bootstrap_with=None, use_timer=False,
+            with_proof=False, random_seed=None):
         """
             Actual constructor of the solver.
         """
 
         if not self.maplesat:
-            self.maplesat = pysolvers.maplecm_new(random_seed=random_seed)
+            if random_seed is None:
+                self.maplesat = pysolvers.maplecm_new()
+            else:
+                self.maplesat = pysolvers.maplecm_new(random_seed=random_seed)
 
             if bootstrap_with:
                 if type(bootstrap_with) == CNFPlus and bootstrap_with.atmosts:
@@ -3588,7 +3628,7 @@ class Maplesat(object):
     """
 
     def __init__(self, bootstrap_with=None, use_timer=False, incr=False,
-            with_proof=False):
+                 with_proof=False, random_seed=None):
         """
             Basic constructor.
         """
@@ -3617,13 +3657,17 @@ class Maplesat(object):
         self.delete()
         self.maplesat = None
 
-    def new(self, bootstrap_with=None, use_timer=False, with_proof=False):
+    def new(self, bootstrap_with=None, use_timer=False,
+            with_proof=False, random_seed=None):
         """
             Actual constructor of the solver.
         """
 
         if not self.maplesat:
-            self.maplesat = pysolvers.maplesat_new()
+            if random_seed is None:
+                self.maplesat = pysolvers.maplesat_new()
+            else:
+                self.maplesat = pysolvers.maplesat_new(random_seed=random_seed)
 
             if bootstrap_with:
                 if type(bootstrap_with) == CNFPlus and bootstrap_with.atmosts:
@@ -3897,7 +3941,7 @@ class Mergesat3(object):
         MergeSat 3 SAT solver.
     """
 
-    def __init__(self, bootstrap_with=None, use_timer=False):
+    def __init__(self, bootstrap_with=None, use_timer=False, random_seed=None):
         """
             Basic constructor.
         """
@@ -3922,13 +3966,16 @@ class Mergesat3(object):
         self.delete()
         self.mergesat = None
 
-    def new(self, bootstrap_with=None, use_timer=False):
+    def new(self, bootstrap_with=None, use_timer=False, random_seed=None):
         """
             Actual constructor of the solver.
         """
 
         if not self.mergesat:
-            self.mergesat = pysolvers.mergesat3_new()
+            if random_seed is None:
+                self.mergesat = pysolvers.mergesat3_new()
+            else:
+                self.mergesat = pysolvers.mergesat3_new(random_seed=random_seed)
 
             if bootstrap_with:
                 if type(bootstrap_with) == CNFPlus and bootstrap_with.atmosts:
@@ -4193,7 +4240,7 @@ class Minicard(object):
         Minicard SAT solver.
     """
 
-    def __init__(self, bootstrap_with=None, use_timer=False):
+    def __init__(self, bootstrap_with=None, use_timer=False, random_seed=None):
         """
             Basic constructor.
         """
@@ -4218,13 +4265,16 @@ class Minicard(object):
         self.delete()
         self.minicard = None
 
-    def new(self, bootstrap_with=None, use_timer=False):
+    def new(self, bootstrap_with=None, use_timer=False, random_seed=None):
         """
             Actual constructor of the solver.
         """
 
         if not self.minicard:
-            self.minicard = pysolvers.minicard_new()
+            if random_seed is None:
+                self.minicard = pysolvers.minicard_new()
+            else:
+                self.minicard = pysolvers.minicard_new(random_seed=random_seed)
 
             if bootstrap_with:
                 for clause in bootstrap_with:
@@ -4497,7 +4547,7 @@ class Minisat22(object):
         MiniSat 2.2 SAT solver.
     """
 
-    def __init__(self, bootstrap_with=None, use_timer=False):
+    def __init__(self, bootstrap_with=None, use_timer=False, random_seed=None):
         """
             Basic constructor.
         """
@@ -4522,13 +4572,16 @@ class Minisat22(object):
         self.delete()
         self.minisat = None
 
-    def new(self, bootstrap_with=None, use_timer=False):
+    def new(self, bootstrap_with=None, use_timer=False, random_seed=None):
         """
             Actual constructor of the solver.
         """
 
         if not self.minisat:
-            self.minisat = pysolvers.minisat22_new()
+            if random_seed is None:
+                self.minisat = pysolvers.minisat22_new()
+            else:
+                self.minisat = pysolvers.minisat22_new(random_seed=random_seed)
 
             if bootstrap_with:
                 if type(bootstrap_with) == CNFPlus and bootstrap_with.atmosts:
@@ -4793,7 +4846,7 @@ class MinisatGH(object):
         MiniSat SAT solver (version from github).
     """
 
-    def __init__(self, bootstrap_with=None, use_timer=False):
+    def __init__(self, bootstrap_with=None, use_timer=False, random_seed=None):
         """
             Basic constructor.
         """
@@ -4818,13 +4871,16 @@ class MinisatGH(object):
         self.delete()
         self.minisat = None
 
-    def new(self, bootstrap_with=None, use_timer=False):
+    def new(self, bootstrap_with=None, use_timer=False, random_seed=None):
         """
             Actual constructor of the solver.
         """
 
         if not self.minisat:
-            self.minisat = pysolvers.minisatgh_new()
+            if random_seed is None:
+                self.minisat = pysolvers.minisatgh_new()
+            else:
+                self.minisat = pysolvers.minisatgh_new(random_seed=random_seed)
 
             if bootstrap_with:
                 if type(bootstrap_with) == CNFPlus and bootstrap_with.atmosts:
